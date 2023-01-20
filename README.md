@@ -7,7 +7,7 @@ This browser based web application to ...
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 
-* Ivan CHeng I want to change the world.
+* Ivan Cheng I want to change the world
 * My name is Martin Siu and I am excited about this project because I want to change the world.
 * I am Julie and I am excited about this subject because I want to change the world.
 
