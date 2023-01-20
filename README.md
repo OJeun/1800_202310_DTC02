@@ -6,13 +6,10 @@ This browser based web application to ...
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-<<<<<<< HEAD
 * Ivan CHeng i want to change the world
-=======
 * My name is Martin Siu and I am excited about this project because I want to change the world.
->>>>>>> 92fa0c2ddd455d6e7afbd796d638b74aa60bed7d
-* ...
-* ...
+* I am Julie and I am excited about this subject because I want to change the world.
+
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
