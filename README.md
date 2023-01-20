@@ -12,8 +12,6 @@ List team members and/or short bio's here...
 * I am Julie and I am excited about this subject because I want to change the world.
 
 
-* My name is Martin Siu and I am excited about this project because I want to change the world.
-
 
 	
 ## 3. Technologies and Resources Used
