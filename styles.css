@@ -10,9 +10,7 @@
     text-decoration: underline;
 }
 
-
-
-.cardi {
+.nav .cardi {
     display: flex;
     flex-direction: column;
 }
@@ -22,8 +20,13 @@ img {
     width: 43px;
 }
 
-.jumbotron .dog-img {
+
+.jumbotron .dog {
     border-radius: 0%;
     width: 30%;
-    margin: 0 35%;
+    margin: 3% 35%;
+}
+
+.jumbotron {
+    padding-top: 10px;
 }
