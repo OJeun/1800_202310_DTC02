@@ -29,6 +29,7 @@ img {
 
 .jumbotron {
     padding-top: 10px;
+    text-align: center;
 }
 
 #bottomNav {
@@ -41,3 +42,8 @@ img {
     width: 33%
 }
 
+@media only screen and (max-width: 390px) {
+    #brandName {
+        font-size: 10%;
+    }
+}
