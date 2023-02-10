@@ -38,6 +38,11 @@ img {
 
 }
 
+#bottomList {
+    display: flex;
+    width: 100%;
+}
+
 #listElement {
     width: 33%
 }
