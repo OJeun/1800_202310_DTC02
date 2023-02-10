@@ -1,4 +1,31 @@
-.form-inline {
-    float: right;
+img {
+    width: 10px;
+}
 
+.container {
+    display: flex;
+}
+
+.container1 {
+    float: left;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+
+
+.cardi {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    border-radius: 50%;
+    width: 43px;
+}
+
+button {
+    margin-left: 5px;
 }
