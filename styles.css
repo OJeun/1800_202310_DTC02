@@ -1,7 +1,3 @@
-img {
-    width: 10px;
-}
-
 .container {
     display: flex;
 }
@@ -26,6 +22,8 @@ img {
     width: 43px;
 }
 
-button {
-    margin-left: 5px;
+.jumbotron .dog-img {
+    border-radius: 0%;
+    width: 30%;
+    margin: 0 35%;
 }
