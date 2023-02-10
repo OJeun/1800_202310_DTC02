@@ -37,8 +37,8 @@ img {
 
 }
 
-#listElements {
-    width: 33%;
+#listElement {
+    width: 33%
 }
 
 @media only screen and (max-width: 390px) {
