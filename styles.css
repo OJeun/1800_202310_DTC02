@@ -30,3 +30,9 @@ img {
 .jumbotron {
     padding-top: 10px;
 }
+
+#bottomnav {
+    display: flex;
+    width: 100%
+
+}
