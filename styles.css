@@ -41,14 +41,22 @@ img {
     bottom: 0;
     width: 100%;
     height: 55px;
-
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    overflow-x: auto;
 }
 
-#bottomList {
-    width: 100%;
+.nav__link {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
 }
+
 
 #listElement {
     width: 33%
