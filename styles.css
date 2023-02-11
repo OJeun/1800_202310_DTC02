@@ -43,7 +43,50 @@ img {
 }
 
 @media only screen and (max-width: 390px) {
-    #brandName {
-        font-size: 10%;
+
+    .navtop-btn {
+        color: black;
     }
+
+    .cardi {
+        font-size: 10px;
+        padding: 38px 0 4px 43px;
+    }
+
+    .profile {
+        padding-top: 8px;
+        width: 45%;
+    }
+
+    .container1 {
+        display: flex;
+
+    }
+
+    .cardi-nav,
+    #brandName,
+    .container2 {
+        width: 34%;
+    }
+
+    .navbar {
+        height: 73px;
+    }
+
+    .cardi-nav a {
+        font-size: 0;
+    }
+
+    #brandName {
+        font-size: 28px;
+        height: 30px;
+        padding-top: 17px;
+    }
+
+
+
+
+
+
+
 }
