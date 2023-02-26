@@ -1,0 +1,50 @@
+.glyphicon-arrow-left {
+    font-size: 2.3rem;
+    margin-left: 10px;
+}
+
+.sunImg{
+    margin-top: 20px;
+    margin-left: 25%;
+    width: 48%;
+}
+
+.alerMSG{
+    padding-top: 5%;
+    text-align: center;
+    font-size: 500%;
+}
+
+.showTemp {
+    font-size: x-large;
+    text-align: center;
+    padding: 3px;
+}
+
+.currentTemp {
+    padding-top: 5%;
+}
+
+.currentTMP,
+.idealTMP {
+    text-decoration: underline;
+}
+
+.whatTime{
+    text-align: center;
+    font-size: large;
+    margin-top: 8%;
+}
+
+.walkTimeBox {
+    background-color: #EEEEEE;
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.exactTime{
+    font-size: 15px;
+    padding-top: 6%;
+}
