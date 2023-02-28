@@ -1,0 +1,180 @@
+* {
+    text-align: center;
+}
+/* Navbar */
+
+.brandN {
+    font-size: 120%;
+}
+.d-inline-block {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.dogProfile {
+    width: 30px;
+    
+}
+
+.navbar {
+    width: 100%;
+}
+.signup {
+    line-height: 1;
+}
+
+.navbar-item {
+    color: black;
+    font-size: 0.7em;
+    text-align: end;
+}
+
+.navbar-item:hover {
+    color: gray;
+    text-decoration: solid;
+}
+
+.brandName{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.dogImg{
+    width: 1.3rem;
+}
+
+/* Main Part */
+
+.container{
+    margin: 0;
+    width: 100%;
+}
+
+
+.mainDog{
+    width: 100%;
+    padding: 0%;
+    background-image: url('https://westernfinancialgroup.ca/get/files/image/galleries/DoNotLeaveYourDogInAHotCar.jpg');
+    background-attachment: fixed;
+    background-size: 100% 59%;
+}
+
+h2{
+    color: black;
+}
+
+
+.mainDog h2 {
+    padding: 30% 30%
+}
+
+.dogMain{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Main part 2 */
+.tempImg {
+    width: 50%;
+    padding: 5%;
+}
+
+.introHeading{
+    padding: 8% 0 0.5%;
+}
+
+.introSecond {
+    padding: 0 10%;
+    font-size: small;
+}
+
+.icon {
+    background-color: #EDF1D6;
+    border-radius: 100%;
+    margin: 5% 30%;
+    width: 30%;
+
+}
+
+.icon {
+    background-color: #EDF1D6;
+    border-radius: 100%;
+    width: 50%;
+
+}
+
+
+
+.hurtImg1,
+.IceDogImg {
+    width: 100%;
+    padding: 30px;
+    background-color: #EDF1D6;
+}
+
+
+@media only screen and (min-width: 960px) {
+    .brandN {
+        font-size: 40px;
+    }
+    .col-3{
+        padding: 0;
+    }
+    .mainDog{
+        background-size: 100% 100%;
+    }
+    h2{
+        color: white;
+    }
+    
+    .introHeading{
+        padding: 5% 0 0 0;
+    }
+
+    .introSecond{
+        margin-bottom: 5%;
+    }
+
+    .tempImg{
+        width: 30%;
+
+    }
+
+    .icon{
+        border-radius: 10%;
+        padding: 0;
+        margin: 0;
+        margin-left: 10px;
+    }
+
+    .hurt1{
+        margin-top: 150px;
+    }
+
+    .hurtImg1,
+    .IceDogImg {
+        width: 100%;
+        padding: 0;
+        background-color: white;
+    }
+
+
+    .DogInstr{
+        background-color: white;
+        height: 100%;
+        margin: 30px;
+    }
+
+    .dog2 {
+        margin-top: 150px;
+    }
+
+    .DogInstr{
+        padding: 40px 0;
+
+        background-image: url(./images/highlighter.png);
+        background-size: 100% 130%;
+    }
+}
