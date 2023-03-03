@@ -1,0 +1,9 @@
+a:hover {
+    background-color: blue;
+    color: red;
+}
+
+.nav_link :active {
+    background-color: blue;
+    color: red;
+}
