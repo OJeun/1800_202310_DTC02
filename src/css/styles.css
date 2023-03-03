@@ -83,6 +83,11 @@ img {
     color: black;
 }
 
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+
 
 
 #listElement {
