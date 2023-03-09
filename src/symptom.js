@@ -69,6 +69,8 @@ function saveUserInfo() {
   console.log(symptoms)
 }
 
+var currentUser;
+
 function saveUserInfo() {
   console.log(symptoms)
   currentUser.update({

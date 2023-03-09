@@ -1,20 +1,19 @@
 function displayHikeInformation() {
     //retreive the document id from the url
-    let params = new URL(window.location.href) //get the url from the searbar
-    let ID = params.searchParams.get("docID");
+    // let params = new URL(window.location.href) //get the url from the searbar
+    let ID = "Heat Stroke"
     console.log(ID);
 
-    db.collection("symptoms").doc(ID).get().then(thisHike => {
-            hikeInfo = thisHike.data();
-            hikeCode = hikeInfo.code;
-            hikeName = hikeInfo.name;
+    db.collection("Heat Illnesses").doc(ID).get().then(illness => {
+            hikeInfo = illness.data();
+            hikeInfo.id = illness.id
+            console.log(hikeInfo)
 
-            document.getElementById("hikeName").innerHTML = hikeName;
-            let imgEvent = document.querySelector(".hike-img");
-            imgEvent.src = "../images/" + hikeCode + ".jpg";
+            dangers = hikeInfo.Dangers;
+            console.log(dangers)
+
+            // document.getElementById("illness").innerHTML = hikeInfo.id;
         }
-
     )
-
 }
 displayHikeInformation();
