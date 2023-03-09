@@ -8,7 +8,7 @@ const findMyLocation = () => {
 
         const API = '242606ab0ab1a8970d797a2227fb42a7';
         const units = 'metric';
-        const tempAPIUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid={242606ab0ab1a8970d797a2227fb42a7}&units=${units}`
+        const tempAPIUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API}&units=${units}`
         
         fetch(tempAPIUrl)
         .then(res => res.json())
