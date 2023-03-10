@@ -32,7 +32,7 @@
             <div class="card-body">
               <h5 class="card-title">Set reminder to drink water</h5>
               <select id="hours" class="form-select" aria-label="Default select example">
-                <option selected>Enter hours</option>
+                <option selected disabled>Enter hours</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -46,7 +46,7 @@
                 <option value="10">10</option>
               </select>
               <select id="minutes" class="form-select" aria-label="Default select example">
-                <option selected>Enter minutes</option>
+                <option selected disabled>Enter minutes</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -108,6 +108,8 @@
                 <option value="58">58</option>
                 <option value="59">59</option>
               </select>
+              
+              <p id="caption"></p>
             </div>
           </div>
           <p id="countdown" style="display: none;"></p>
@@ -119,5 +121,21 @@
     <nav id="footerPlaceholder"></nav>
 
     <script src="./src/skeleton.js"></script>
+    <script>
+      const hoursSelect = document.getElementById('hours');
+      const minutesSelect = document.getElementById('minutes');
+      const caption = document.getElementById('caption');
+  
+      hoursSelect.addEventListener('change', updateCaption);
+      minutesSelect.addEventListener('change', updateCaption);
+  
+      function updateCaption() {
+          const hours = parseInt(hoursSelect.value);
+          const minutes = parseInt(minutesSelect.value);
+          if (!isNaN(hours) && !isNaN(minutes)) {
+              caption.textContent = `${hours} hours ${minutes} minutes`;
+          }
+      }
+  </script>
 </body>
 </html>
