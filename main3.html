@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!------------------------------------------>
     <!-- Bootstrap Library CSS JS CDN go here -->
     <!------------------------------------------>
@@ -22,41 +23,55 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
 
-    <link rel="stylesheet" href="/src/css/location.css">
-
-
-    <title>Location</title>
-    <script src="./src/script.js"></script>
+    <link rel="stylesheet" href="/src/css/main.css">
+    <style>
+        #homepage {
+            background-color: blue;
+            color: red;
+        }
+    </style>
+    <title>HotDog</title>
 </head>
 
 <body>
 
-    <nav id="navbarPlaceholder"></nav>
-
     <main>
+        <div class="backgroundDog">
+            <nav id="navbarPlaceholder"></nav>
 
-    <div class="locationBox">
-        <p>Do you agree to provide your current location?</p>
-        <!-- <button type="button" class="btn btn-dark">Yes</button>
-        <button type="button" class="btn btn-dark">No</button> -->
-        <button type="button" class="btn btn-outline-dark yesButton">Yes</button>
-        <button type="button" class="btn btn-outline-dark">No</button>
-    </div>
+            <div class="mainParts">
+                <div class="temp">
+                    <img class="tempImg" src="./images/thermometer-emoji-clipart-xl.png">
+                    <div class="tempText">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam maxime libero impedit molestiae hic doloribus exercitationem, blanditiis laudantium ratione rem. Vero molestias delectus dolorem, quasi aperiam libero reiciendis ut natus.
+                    </div>
+                </div>
 
+                <div class="symptom">
 
+                </div>
 
+                <div class="hydration">
+
+                </div>
+            </div>
+
+            
+
+        </div>
+        <nav id="footerPlaceholder"></nav>
+       
     </main>
-
-    <nav id="footerPlaceholder"></nav>
+            
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <script src="./src/firebaseAPI_TEAM02.js"></script>
     <script src="./src/skeleton.js"></script>
-    <!-- <script src="./src/location.js"></script> -->
+
 
 </body>
 
