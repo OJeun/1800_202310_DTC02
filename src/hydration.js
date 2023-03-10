@@ -24,6 +24,13 @@ function timer() {
 }
 
 function cancelTimer() {
+    var reminderCard = document.getElementById("reminder");
+    var activeButton = document.getElementById("submitButton")
+    var cancelButton = document.getElementById("cancelButton");
+
+    reminderCard.style.display = "block";
+    activeButton.style.display = "block";
+    cancelButton.style.display = "none";
 
 }
 
