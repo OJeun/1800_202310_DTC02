@@ -14,6 +14,11 @@ const findMyLocation = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            document.getElementById("currentTMP").innerHTML = `${data.main.temp}℃`;
+            console.log(data.main.temp);
+            var iconcode = data.weather[0].icon;
+            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            $('#wicon').attr('src', iconurl);
         })
     }
 

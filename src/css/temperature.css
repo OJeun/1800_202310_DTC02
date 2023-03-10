@@ -1,16 +1,9 @@
-.glyphicon-arrow-left {
-    font-size: 2.3rem;
-    margin-left: 10px;
-}
-
-.sunImg{
-    margin-top: 20px;
-    margin-left: 25%;
-    width: 48%;
+#wicon{
+    width: 40%;
 }
 
 .alerMSG{
-    padding-top: 5%;
+
     text-align: center;
     font-size: 500%;
 }
