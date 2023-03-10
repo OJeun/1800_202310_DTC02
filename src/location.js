@@ -15,7 +15,19 @@ const findMyLocation = () => {
         .then(data => {
             console.log(data)
             document.getElementById("currentTMP").innerHTML = `${data.main.temp}℃`;
-            console.log(data.main.temp);
+            temp = data.main.temp
+            console.log(temp)
+            if (temp < 5) {
+                document.getElementById("alerMSG").innerHTML = "Cold! Feel like Fridge!";
+            }else if(temp <15){
+                document.getElementById("alerMSG").innerHTML = "Cool Weather";
+            }else if(temp <30){
+                document.getElementById("alerMSG").innerHTML = "Warm! Good to go!";
+            }else{
+                document.getElementById("alerMSG").innerHTML = "Very Hot! Better to stay home!";}
+
+    
+
             var iconcode = data.weather[0].icon;
             var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
             $('#wicon').attr('src', iconurl);
@@ -25,8 +37,6 @@ const findMyLocation = () => {
     const error = () => {
         console.log("Unable to retrieve your location")
     }
-
-
 
     navigator.geolocation.getCurrentPosition(success, error);
 
