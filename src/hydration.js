@@ -18,13 +18,29 @@ function timer() {
 
 
     var timeInMilliSeconds = hoursValue * 3600 * 1000 + minutesValue * 60 * 1000
-    var endTime = new Date().getTime() + timeInMilliSeconds;
+   // var endTime = new Date().getTime() + timeInMilliSeconds;
+
+    
   
     
     reminderCard.style.display = "none";
     activeButton.style.display = "none";
     countdown.style.display = "block";
     cancelButton.style.display = "block";
+
+    var endTime = localStorage.getItem("countdownEndTime");
+  
+    if (endTime) {
+      // If a countdown end time is stored, use it instead of calculating a new one
+      endTime = parseInt(endTime);
+    } else {
+      // Calculate the end time if a countdown end time is not already stored
+      endTime = new Date().getTime() + hoursValue * 60 * 60 * 1000 + minutesValue * 60 * 1000;
+      
+      // Store the end time in localStorage
+      localStorage.setItem("countdownEndTime", endTime);
+    }
+    
     
     timerId = setInterval(() => {
         var now = new Date().getTime();
@@ -33,14 +49,32 @@ function timer() {
         minutesRemaining = Math.floor((timerCountdown % (1000 * 60 * 60)) / (1000 * 60));
         secondsRemaining = Math.floor((timerCountdown % (1000 * 60)) / 1000);
         console.log(timerCountdown);
-        //Update the countdown text
-        countdown.textContent = `Drink water in ${hoursRemaining} hours, ${minutesRemaining} minutes, and ${secondsRemaining} seconds`;
+
 
         if (timerCountdown < 0) {
             clearInterval(timerId);
             countdown.textContent = "Time to Drink Water!"
-        }        
+            // Remove the countdown end time from localStorage when the countdown is finished
+            localStorage.removeItem("countdownEndTime");
+        } else {
+            //Update the countdown text
+            countdown.textContent = `Drink water in ${hoursRemaining} hours, ${minutesRemaining} minutes, and ${secondsRemaining} seconds`;
+            
+        }      
     }, 1000);
+
+    window.onload = function() {
+        
+        if (endTime) {
+          // If a countdown end time is stored, start the timer
+          reminderCard.style.display = "none";
+          countdown.style.display = "block";
+          startTimer();
+        } else {
+            reminderCard.style.display = "block";
+            countdown.style.display = "none";
+        }
+    }
 
     
 }
@@ -59,6 +93,7 @@ function cancelTimer() {
     cancelButton.style.display = "none";
     countdown.style.display = "none";
     clearInterval(timerId);
+    localStorage.removeItem("countdownEndTime");
 
 }
 
