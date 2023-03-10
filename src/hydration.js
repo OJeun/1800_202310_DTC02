@@ -1,4 +1,8 @@
 var timerID;
+var hoursRemaining;
+var minutesRemaining;
+var secondsRemaining;
+
 
 function timer() {
     var reminderCard = document.getElementById("reminder");
@@ -25,9 +29,9 @@ function timer() {
     timerId = setInterval(() => {
         var now = new Date().getTime();
         var timerCountdown = endTime - now;
-        var hoursRemaining = Math.floor(timerCountdown / (1000 * 60 * 60));
-        var minutesRemaining = Math.floor((timerCountdown % (1000 * 60 * 60)) / (1000 * 60));
-        var secondsRemaining = Math.floor((timerCountdown % (1000 * 60)) / 1000);
+        hoursRemaining = Math.floor(timerCountdown / (1000 * 60 * 60));
+        minutesRemaining = Math.floor((timerCountdown % (1000 * 60 * 60)) / (1000 * 60));
+        secondsRemaining = Math.floor((timerCountdown % (1000 * 60)) / 1000);
         console.log(timerCountdown);
         //Update the countdown text
         countdown.textContent = `Drink water in ${hoursRemaining} hours, ${minutesRemaining} minutes, and ${secondsRemaining} seconds`;
@@ -46,7 +50,10 @@ function cancelTimer() {
     var activeButton = document.getElementById("submitButton")
     var cancelButton = document.getElementById("cancelButton");
     var countdown = document.getElementById("countdown");
-
+    hoursRemaining = 0;
+    minutesRemaining = 0;
+    secondsRemaining = 0;
+    countdown.textContent = `Drink water in ${hoursRemaining} hours, ${minutesRemaining} minutes, and ${secondsRemaining} seconds`;
     reminderCard.style.display = "block";
     activeButton.style.display = "block";
     cancelButton.style.display = "none";
