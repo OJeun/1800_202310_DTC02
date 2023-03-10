@@ -1,6 +1,4 @@
 function displayHikeInformation() {
-    //retreive the document id from the url
-    // let params = new URL(window.location.href) //get the url from the searbar
     let ID = "Heat Stroke"
     console.log(ID);
 
