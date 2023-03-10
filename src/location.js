@@ -20,7 +20,7 @@ const findMyLocation = () => {
             if (temp < 5) {
                 document.getElementById("alerMSG").innerHTML = "Cold! Feel like Fridge!";
             }else if(temp <15){
-                document.getElementById("alerMSG").innerHTML = "Cool Weather";
+                document.getElementById("alerMSG").innerHTML = "The weather is cool!";
             }else if(temp <30){
                 document.getElementById("alerMSG").innerHTML = "Warm! Good to go!";
             }else{
