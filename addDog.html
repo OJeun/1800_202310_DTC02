@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/css/addDog.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
+
+  <style>
+    #homepage {
+      background-color: blue;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbarPlaceholder"></nav>
+
+  <main>
+    <div class="container">
+      <h1>Dog Profile </h1>
+      <form>
+          <fieldset class="mb-3" id="dogInfoFields" disabled>
+              <div class="form-group">
+                  <label >Dog </label>
+                  <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                  <label >School</label>
+                  <input type="text" id="schoolInput" class="form-control" placeholder="Enter your school">
+              </div>
+              <div class="form-group">
+                  <label >City</label>
+                  <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
+              </div>
+          </fieldset>
+          <div class="d-flex justify-content-end mt-5">
+              <button type="button" class="btn btn-secondary">Edit</button>
+              <span style="width: 10px"></span>
+              <button type="button" class="btn btn-info">Save</button>
+          </div>
+      </form>
+</div>
+    <div class="dogInfo">
+      <label class="forText" for="breed-input">Search for a dog breed:</label>
+      <input type="text" id="breed-input">
+      <br>
+      <label class="forText" for="breed-dropdown">Select a dog breed:</label>
+      <select id="breed-dropdown">
+        <option value="">-- Select a breed --</option>
+      </select>
+      <br>
+      <label class="forText" >Name :</label>
+      <input type="text" id="dogName-input">
+      <br>
+      <label class="forText" >Age :</label>
+      <input type="text" id="dogName-input">
+      <br>
+      <label>Length of hair :</label>
+      <input type="checkbox" id="sHair" name="sHair" value="hair1">
+      <label for="sHair"> Short</label>
+      <input type="checkbox" id="metHair" name="mHair" value="hair2">
+      <label for="mHair"> Medium</label>
+      <input type="checkbox" id="lHair" name="lHair" value="hair3">
+      <label for="lHair"> Long</label>
+      <br>
+    </div>
+  </main>
+
+  <nav id="footerPlaceholder"></nav>
+
+  <script src="./src/skeleton.js"></script>
+  <script src="./src/main.js"></script>
+
+
+</body>
+
+</html>
