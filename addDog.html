@@ -14,6 +14,11 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+  <script src="./src/firebaseAPI_TEAM02.js"></script>
 
   <style>
     #homepage {
@@ -51,6 +56,7 @@
       <input type="checkbox" id="lHair" name="lHair" value="hair3">
       <label for="lHair"> Long</label>
       <br>
+      <button type="submit" onclick ="addDog()">Submit</button>
     </div>
   </main>
 
@@ -58,6 +64,7 @@
 
   <script src="./src/skeleton.js"></script>
   <script src="./src/main.js"></script>
+  <script src="./src/dogProfile.js"></script>
 
 
 </body>

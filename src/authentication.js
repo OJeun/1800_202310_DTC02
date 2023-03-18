@@ -6,6 +6,7 @@
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 var uiConfig = {
+
     callbacks: {
         signInSuccessWithAuthResult: (authResult, redirectUrl) => {
          // User successfully signed in.
@@ -26,8 +27,7 @@ var uiConfig = {
                     email: user.email,                         //with authenticated user's ID (user.uid)
                     country: "Canada",                      //optional default profile info      
 										school: "BCIT",                          //optional default profile info
-                    dogs: ""
-                   
+                    dogs: []
              }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("main.html");       //re-direct to main.html after signup
@@ -61,8 +61,16 @@ var uiConfig = {
     tosUrl: '<your-tos-url>',
     // Privacy policy url.
     privacyPolicyUrl: '<your-privacy-policy-url>'
+    
   };
 
   ui.start('#firebaseui-auth-container', uiConfig);
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      console.log(user);
+    }
+  });
+
+
 
   
