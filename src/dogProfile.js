@@ -1,7 +1,7 @@
 //var currentUser = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
-var user = firebase.auth().currentUser;
+// var user = firebase.auth().currentUser;
 
-var userRef = db.collection("users").doc(user.id);
+// var userRef = db.collection("users").doc(user.id);
 /*
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
@@ -18,26 +18,19 @@ doAll();*/
 
 
 function addDog() {
-   console.log('hello')
-   
-    var user = firebase.auth().currentUser;
-    var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
-    if (user) {
-      var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
-      dogsCollection.limit(1).get().then((querySnapshot) => {
-        if (querySnapshot.size > 0) {
-          querySnapshot.forEach((doc) => {
-            console.log(doc.data());
-          });
-        } else {
-          console.log("No documents found");
-        }
-      }).catch((error) => {
-        console.log("Error getting documents: ", error);
-      });
-    } else {
-      console.log("User not signed in");
-    }
+
+    console.log('hello')
+ 
+     user = firebase.auth().currentUser;
+     var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
+     dogsCollection.add({
+         name : document.getElementById(),
+         breed: "shit zu"
+     }).then((docRef) => {
+         console.log("Document written with ID: ", docRef.id);
+     }).catch((error) => {
+         console.log("Error adding document: ", error);
+     });
     
     // db.collection("users").doc(user.uid).collection("dogs").doc()
     //     .then(userDoc => {
@@ -66,6 +59,5 @@ function addDog() {
     // .catch((error) => {
     //     console.error("error adding document ", error);
     // })
-    
 }
 
