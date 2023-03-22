@@ -12,26 +12,26 @@
 
 <body>
     <nav>
-        <!-- <div class="nav-cont container-fluid">
+        <div class="nav-cont container-fluid">
             <div class="row">
                 <div class="col-3">
                     <a class="navbar-brand" href="#">
-                        <img class="dogProfile" src="/images/dogProfile.png" class="d-inline-block align-top" alt="">
+                        <img class="dogProfile" src="/images/dogProfile.png" class="d-inline-block align-top" alt="" >
                         <ul id="nav-list" class="dropdown-menu">
                             <li class="sub-item">
-                                <a href="addDog.html">Add Dog+</a>
+                                <a id="dog1">Add Dog+</a>
                             </li>
                             <li class="sub-item">
-                                <a href="addDog.html">Add Dog+</a>
+                                <a id="dog2">Add Dog+</a>
                             </li>
                             <li class="sub-item">
-                              <a href="addDog.html">Add Dog+</a>
+                                <a id="dog3">Add Dog+</a>
                             <li class="sub-item">
-                                <a href="addDog.html">Add Dog+</a>
+                                <a id="dog4">Add Dog+</a>
                             </li>
-                          </ul>
+                        </ul>
                     </a>
-                </div> -->
+                </div>
 
                 <div class="col brandName">
                     <img class="dogImg" src="/images/pawprint.png">
@@ -46,16 +46,17 @@
 
 
 
-<script>
-    document.querySelector('.dogProfile').addEventListener('click', function() {
-        const navList = document.getElementById('nav-list');
-        if (navList.style.display === 'none') {
-            navList.style.display = 'block';
-        } else {
-            navList.style.display = 'none';
-        }
-    });
-</script>
+    <script>
+        document.querySelector('.dogProfile').addEventListener('click', function () {
+            const navList = document.getElementById('nav-list');
+            if (navList.style.display === 'none') {
+                navList.style.display = 'block';
+            } else {
+                navList.style.display = 'none';
+            }
+        });
+    </script>
+    <script src="./src/nav.js"></script>
 </body>
 
 </html>
