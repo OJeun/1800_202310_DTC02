@@ -27,41 +27,45 @@
       }
     </style>
     <script>
-      window.onload = setTimeout(function() {
-        console.log("window on load succesful")
-        var user = firebase.auth().currentUser;
-        var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
+window.onload = async function() {
+  console.log("window on load successful");
+  await firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
 
-        dogsCollection.get().then((querySnapshot) => {
+      dogsCollection.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            // Access the fields in the document using the data() method
-            const dogData = doc.data();
-            const dogId = doc.id;
-            dogsArray.push({
-                id: dogId,
-                name: dogData.name,
-                age: dogData.age,
-                breed: dogData.breed
-            })
+          // Access the fields in the document using the data() method
+          const dogData = doc.data();
+          const dogId = doc.id;
+          dogsArray.push({
+            id: dogId,
+            name: dogData.name,
+            age: dogData.age,
+            breed: dogData.breed
+          });
 
-            // Log the fields to the console
-            // console.log("Dog name:", dogData.name);
-            // console.log("Dog breed:", dogData.breed);
-            // console.log("Dog age:", dogData.age);
-            // console.log(dogId);
+          // Log the fields to the console
+          // console.log("Dog name:", dogData.name);
+          // console.log("Dog breed:", dogData.breed);
+          // console.log("Dog age:", dogData.age);
+          // console.log(dogId);
         });
-        const listOfDogs = document.getElementById("dogsList")
-        dogsArray.forEach((dog) => {
-              console.log("hello")
-              listOfDogs.innerHTML += ` <div id="dogCard">
+        const listOfDogs = document.getElementById("dogsList");
+        dogsArray.forEach(dog => {
+          console.log("hello");
+          listOfDogs.innerHTML += ` <div id="dogCard">
                                             <a href="#" data-dog-id="${dog.id}" onclick = "switchDog()">${dog.name}</a>
                                      </div>`;
-            })
-    }).catch((error) => {        
+        });
+      }).catch(error => {
         console.log("Error getting dogs collection:", error);
-    });
-    console.log(dogsArray);
-      }, 500);
+      });
+      console.log(dogsArray);
+    }
+  });
+};
+
     </script>
   
 </head>
