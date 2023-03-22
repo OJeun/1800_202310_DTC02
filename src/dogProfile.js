@@ -42,6 +42,7 @@ function addDog() {
         console.log("Error adding document: ", error);
     });
 
+
     // db.collection("users").doc(user.uid).collection("dogs").doc()
     //     .then(userDoc => {
     //         console.log(userDoc.data().name)
@@ -70,4 +71,31 @@ function addDog() {
     //     console.error("error adding document ", error);
     // })
 }
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAm6CxtFR8Y8MK-set8QKae7HEV5agcj0E",
+    authDomain: "comp1800-hotdog.firebaseapp.com",
+    projectId: "comp1800-hotdog",
+    storageBucket: "comp1800-hotdog.appspot.com",
+    messagingSenderId: "984374057153",
+    appId: "1:984374057153:web:62c8d3b98c50b23253dc40"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const storageRef = firebase.storage().ref();
+const firestore = firebase.firestore();
+
+function uploadImage() {
+    const file = document.getElementById('imageUpload').files[0];
+    const user = auth.currentUser;
+    if (user) {
+      const imageRef = storageRef.child('profilePictures/' + user.uid + '/' + file.name);
+      imageRef.put(file).then(() => {
+        console.log('Image uploaded successfully!');
+        // Call a function to update the user's profile picture in Cloud Firestore
+        updateUserProfilePicture(user.uid, imageRef.fullPath);
+      });
+    }
+  }
+  
 

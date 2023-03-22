@@ -90,6 +90,13 @@
             <input type="checkbox" id="lHair" name="lHair" value="hair3">
             <label for="lHair"> Long</label> -->
           </div>
+
+          <!-- For upload the imgaes -->
+          <form>
+            <input type="file" id="imageUpload" accept="image/*">
+            <button type="button" onclick="uploadImage()">Upload</button>
+          </form>
+          
         </fieldset>
         <div class="d-flex justify-content-end mt-5">
           <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
@@ -104,6 +111,7 @@
 
   <nav id="footerPlaceholder"></nav>
 
+  <script src="./src/firebaseAPI_TEAM02.js"></script>
   <script src="./src/skeleton.js"></script>
   <script src="./src/dogProfile.js"></script>
   <script src="./src/main.js"></script>

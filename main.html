@@ -1,80 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./src/css/hydration.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/css/hydration.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="src/hydration.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
-    <script src="./src/firebaseAPI_TEAM02.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="src/hydration.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="./src/firebaseAPI_TEAM02.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
 
-    <style>
-      #homepage {
-          background-color: blue;
-          color: red;
-      }
-    </style>
-    <script>
-window.onload = async function() {
-  console.log("window on load successful");
-  await firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
-
-      dogsCollection.get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // Access the fields in the document using the data() method
-          const dogData = doc.data();
-          const dogId = doc.id;
-          dogsArray.push({
-            id: dogId,
-            name: dogData.name,
-            age: dogData.age,
-            breed: dogData.breed
-          });
-
-          // Log the fields to the console
-          // console.log("Dog name:", dogData.name);
-          // console.log("Dog breed:", dogData.breed);
-          // console.log("Dog age:", dogData.age);
-          // console.log(dogId);
-        });
-        const listOfDogs = document.getElementById("dogsList");
-        dogsArray.forEach(dog => {
-          console.log("hello");
-          listOfDogs.innerHTML += ` <div id="dogCard">
-                                            <a href="#" data-dog-id="${dog.id}" onclick = "switchDog()">${dog.name}</a>
-                                     </div>`;
-        });
-      }).catch(error => {
-        console.log("Error getting dogs collection:", error);
-      });
-      console.log(dogsArray);
+  <style>
+    #homepage {
+      background-color: blue;
+      color: red;
     }
-  });
-};
+  </style>
+  <script>
+    window.onload = async function () {
+      console.log("window on load successful");
+      await firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
 
-    </script>
-  
+          dogsCollection.get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              // Access the fields in the document using the data() method
+              const dogData = doc.data();
+              const dogId = doc.id;
+              dogsArray.push({
+                id: dogId,
+                name: dogData.name,
+                age: dogData.age,
+                breed: dogData.breed
+              });
+
+              // Log the fields to the console
+              // console.log("Dog name:", dogData.name);
+              // console.log("Dog breed:", dogData.breed);
+              // console.log("Dog age:", dogData.age);
+              // console.log(dogId);
+            });
+            const listOfDogs = document.getElementById("dogsList");
+            dogsArray.forEach(dog => {
+              console.log("hello");
+              listOfDogs.innerHTML += ` <div id="dogCard">
+                                            <a href="#" data-dog-id="${dog.id}" onclick = "switchDog()">${dog.name}</a>
+                                     </div>
+                                     <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="./images/Nahra.jpeg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">${dog.name}</h5>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>`;
+
+
+
+            });
+          }).catch(error => {
+            console.log("Error getting dogs collection:", error);
+          });
+          console.log(dogsArray);
+        }
+      });
+    };
+
+  </script>
+
 </head>
+
 <body>
   <nav id="navbarPlaceholder"></nav>
 
   <main>
-    <div id ="dogsList"></div>
-    <button ><a href="addDog.html">+Add your dog</a></button>
+    
+    <button><a href="addDog.html">+Add your dog</a></button>
+    <div id="dogsList"></div>
     <!-- <label for="breed-input">Search for a dog breed:</label>
     <input type="text" id="breed-input">
     <br>
@@ -84,13 +97,26 @@ window.onload = async function() {
     </select>
     <button onclick = "addDog()">submit</button>
   </main> -->
-    
-  <nav id="footerPlaceholder"></nav>
 
-<script src="./src/skeleton.js"></script>
-<script src="./src/main.js"></script>
-<script src ="./src/switchDog.js"></script>
+
+
+    <!-- <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="./images/Nahra.jpeg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div> -->
+
+
+
+    <nav id="footerPlaceholder"></nav>
+
+    <script src="./src/skeleton.js"></script>
+    <script src="./src/main.js"></script>
+    <script src="./src/switchDog.js"></script>
 
 
 </body>
+
 </html>
