@@ -16,7 +16,8 @@ function timer() {
     var countdown = document.getElementById("countdown");
     var hours = document.getElementById("hours");
     var hoursValue = parseInt(hours.value);
-
+    var currentDogId = localStorage.getItem("currentDogId");
+    var countdownEndTimeKey = "countdownEndTime_" + currentDogId
     
     var minutes = document.getElementById("minutes");
     var minutesValue = parseInt(minutes.value);
