@@ -1,21 +1,24 @@
 console.log("hi")
-user = firebase.auth().currentUser;
-var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
+// user = firebase.auth().currentUser;
+// var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
+function getName() {
+    var user = firebase.auth().currentUser;
+var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
 
-// dogsCollection.get()
-//   .then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//       // Access the 'name' field of the document
-//       const name = doc.data().name;
+dogsCollection.get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        // Access the fields in the document using the data() method
+        const dogData = doc.data();
 
-//       // Perform an operation using the 'name' field
-//       console.log(`Hello, ${name}!`);
-//     });
-//   })
-//   .catch((error) => {
-//     console.log('Error getting documents: ', error);
-//   });
+        // Log the fields to the console
+        console.log("Dog name:", dogData.name);
+        console.log("Dog breed:", dogData.breed);
+        console.log("Dog age:", dogData.age);
+    });
+}).catch((error) => {
+    console.log("Error getting dogs collection:", error);
+});
 
-dogsCollection.get().data().name
+}
 
 
