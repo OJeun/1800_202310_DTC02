@@ -24,7 +24,7 @@ function addDog() {
      user = firebase.auth().currentUser;
      var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
      dogsCollection.add({
-         name : document.getElementById(),
+         name : document.getElementById("nameInput"),
          breed: "shit zu"
      }).then((docRef) => {
          console.log("Document written with ID: ", docRef.id);
