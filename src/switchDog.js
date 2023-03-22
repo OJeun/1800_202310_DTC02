@@ -2,7 +2,6 @@ var currentDog;
 var currentDogId;
 function switchDog() {
     currentDogId = event.target.getAttribute("data-dog-id");
-    console.log(currentDogId);
     localStorage.setItem("currentDogId", currentDogId)
     console.log(localStorage.getItem("currentDogId"))
 }
