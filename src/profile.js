@@ -42,6 +42,8 @@ function editUserInfo() {
  }
 
  function saveUserInfo() {
+
+    console.log("hello")
     //enter code here
 
     //a) get user entered values

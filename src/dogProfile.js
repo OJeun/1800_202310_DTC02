@@ -1,7 +1,8 @@
 //var currentUser = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
-// var user = firebase.auth().currentUser;
-// var userRef = db.collection("users").doc(firebase.auth().currentUser.uid);
+var user = firebase.auth().currentUser;
 
+var userRef = db.collection("users").doc(user.id);
+/*
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -13,13 +14,41 @@ function doAll() {
         }
     });
 }
-doAll();
-  
+doAll();*/
 
-function addDog(user) {
-    db.collection("users").doc(user.uid).get()
-        .then(userDoc => {
-            console.log(userDoc.name)
+
+function addDog() {
+   console.log('hello')
+   
+    var user = firebase.auth().currentUser;
+    var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
+    if (user) {
+      var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
+      dogsCollection.limit(1).get().then((querySnapshot) => {
+        if (querySnapshot.size > 0) {
+          querySnapshot.forEach((doc) => {
+            console.log(doc.data());
+          });
+        } else {
+          console.log("No documents found");
+        }
+      }).catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+    } else {
+      console.log("User not signed in");
+    }
+    
+    // db.collection("users").doc(user.uid).collection("dogs").doc()
+    //     .then(userDoc => {
+    //         console.log(userDoc.data().name)
+
+    // dogsCollection.limit(1).get().then((querySnapshot) => {
+    //     querySnapshot.forEach(doc => {
+    //         console.log(doc.data().name)
+    //     })
+    // })
+    
     // if (user) {
     //     console.log("hello world");
     // } else {
@@ -37,6 +66,6 @@ function addDog(user) {
     // .catch((error) => {
     //     console.error("error adding document ", error);
     // })
-})
+    
 }
 
