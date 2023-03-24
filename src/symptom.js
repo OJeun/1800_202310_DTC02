@@ -1,44 +1,112 @@
-var symptoms = [];
+// var symptoms = [];
+// var currentUser;
+
+// function saveUserInfo() {
+//   // get user entered values
+//   var vomiting = document.getElementById('vomiting');
+//   if (vomiting.checked) {
+//     symptoms.push("vomiting");
+//   }
+//   var muscle_spasms = document.getElementById('muscle_spasms');
+//   if (muscle_spasms.checked) {
+//     symptoms.push("muscle_spasms");
+//   }
+//   var dizziness = document.getElementById('dizziness');
+//   if (dizziness.checked) {
+//     symptoms.push("dizziness");
+//   }
+//   var fatigue = document.getElementById('fatigue');
+//   if (fatigue.checked) {
+//     symptoms.push("fatigue");
+//   }
+//   var diarrhea = document.getElementById('diarrhea');
+//   if (diarrhea.checked) {
+//     symptoms.push("diarrhea");
+//   }
+//   var skin_elasticity = document.getElementById('skin_elasticity');
+//   if (skin_elasticity.checked) {
+//     symptoms.push("skin_elasticity");
+//   }
+
+//   // log symptoms for debugging
+//   console.log(symptoms);
+
+//   if (firebase.auth().currentUser) {
+//     console.log('User is signed in');
+//   } else {
+//     console.log('No user is signed in');
+//   }
+
+
+//   firebase.auth().onAuthStateChanged(user => {
+//         // Check if user is signed in:
+//         if (user) {
+//           currentUser = db.collection("users").doc(user.uid)
+//           // update user's symptoms in database
+//           currentUser.update({
+//               symptoms: symptoms,
+//             })
+//             .then(() => {
+//               console.log("Document successfully updated!");
+//             })
+//             .catch((error) => {
+//               console.error("Error updating document: ", error);
+//             });
+//         }
+//       });
+//     }
+
+var currentUser;
 
 function saveUserInfo() {
-  var currentUser = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
-  // get user entered values
-  var vomiting = document.getElementById('vomiting');
-  if (vomiting.checked) {
-    symptoms.push("vomiting");
-  }
-  var muscle_spasms = document.getElementById('muscle_spasms');
-  if (muscle_spasms.checked) {
-    symptoms.push("muscle_spasms");
-  }
-  var dizziness = document.getElementById('dizziness');
-  if (dizziness.checked) {
-    symptoms.push("dizziness");
-  }
-  var fatigue = document.getElementById('fatigue');
-  if (fatigue.checked) {
-    symptoms.push("fatigue");
-  }
-  var diarrhea = document.getElementById('diarrhea');
-  if (diarrhea.checked) {
-    symptoms.push("diarrhea");
-  }
-  var skin_elasticity = document.getElementById('skin_elasticity');
-  if (skin_elasticity.checked) {
-    symptoms.push("skin_elasticity");
-  }
-  
-  // log symptoms for debugging
-  console.log(symptoms);
+  firebase.auth().onAuthStateChanged(user => {
+    // Check if user is signed in:
+    if (user) {
+      console.log('User is signed in');
+      var symptoms = [];
+      // get user entered values
+      var vomiting = document.getElementById('vomiting');
+      if (vomiting.checked) {
+        symptoms.push("vomiting");
+      }
+      var muscle_spasms = document.getElementById('muscle_spasms');
+      if (muscle_spasms.checked) {
+        symptoms.push("muscle_spasms");
+      }
+      var dizziness = document.getElementById('dizziness');
+      if (dizziness.checked) {
+        symptoms.push("dizziness");
+      }
+      var fatigue = document.getElementById('fatigue');
+      if (fatigue.checked) {
+        symptoms.push("fatigue");
+      }
+      var diarrhea = document.getElementById('diarrhea');
+      if (diarrhea.checked) {
+        symptoms.push("diarrhea");
+      }
+      var skin_elasticity = document.getElementById('skin_elasticity');
+      if (skin_elasticity.checked) {
+        symptoms.push("skin_elasticity");
+      }
 
-  // update user's symptoms in database
-  currentUser.update({
-      symptoms: symptoms,
-    })
-    .then(() => {
-      console.log("Document successfully updated!");
-    })
-    .catch((error) => {
-      console.error("Error updating document: ", error);
-    });
+      // log symptoms for debugging
+      console.log(symptoms);
+
+      currentUser = db.collection("users").doc(user.uid)
+      // update user's symptoms in database
+      currentUser.update({
+          symptoms: symptoms,
+        })
+        .then(() => {
+          console.log("Document successfully updated!");
+          window.location.href = './symptom2.html';
+        })
+        .catch((error) => {
+          console.error("Error updating document: ", error);
+        });
+    } else {
+      console.log('No user is signed in');
+    }
+  });
 }

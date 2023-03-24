@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/symptom.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <style>
+        #symptoms {
+            background-color: blue;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbarPlaceholder"></nav>
+
+    <div class="title">
+        <h1> Your dog may have <span id="illness">illness</span></h1>
+    </div>
+    </div>
+
+    <div class="danger">
+        <div class="card-body">
+            <h5 class="card-title">Dangers</h5>
+            <ul id="danger"></ul>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <div class="card-body">
+            <h5 class="card-title">Recommendations</h5>
+            <ul id="remedy"></ul>
+        </div>
+    </div>
+
+    <nav id="footerPlaceholder"></nav>
+
+    <script src="./src/firebaseAPI_TEAM02.js"></script>
+    <script src="./src/symptom2.js"></script>
+    <script src="./src/skeleton.js"></script>
+</body>
+
+</html>
