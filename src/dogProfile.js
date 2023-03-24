@@ -72,18 +72,18 @@ function addDog() {
     // })
 }
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAm6CxtFR8Y8MK-set8QKae7HEV5agcj0E",
-    authDomain: "comp1800-hotdog.firebaseapp.com",
-    projectId: "comp1800-hotdog",
-    storageBucket: "comp1800-hotdog.appspot.com",
-    messagingSenderId: "984374057153",
-    appId: "1:984374057153:web:62c8d3b98c50b23253dc40"
-};
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const storageRef = firebase.storage().ref();
-const firestore = firebase.firestore();
+// const firebaseConfig = {
+//     apiKey: "AIzaSyAm6CxtFR8Y8MK-set8QKae7HEV5agcj0E",
+//     authDomain: "comp1800-hotdog.firebaseapp.com",
+//     projectId: "comp1800-hotdog",
+//     storageBucket: "comp1800-hotdog.appspot.com",
+//     messagingSenderId: "984374057153",
+//     appId: "1:984374057153:web:62c8d3b98c50b23253dc40"
+// };
+// firebase.initializeApp(firebaseConfig);
+// const auth = firebase.auth();
+// const storageRef = firebase.storage().ref();
+// const firestore = firebase.firestore();
 
 function uploadImage() {
     const file = document.getElementById('imageUpload').files[0];
