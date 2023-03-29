@@ -32,72 +32,29 @@
   <nav id="navbarPlaceholder"></nav>
 
   <main>
-    <!-- <div class="container">
-      <h1>User Profile </h1>
-      <form>
-        <fieldset class="mb-3" id="personalInfoFields" disabled>
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-            <label>School</label>
-            <input type="text" id="schoolInput" class="form-control" placeholder="Enter your school">
-          </div>
-          <div class="form-group">
-            <label>City</label>
-            <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
-          </div>
-        </fieldset>
-        <div class="d-flex justify-content-end mt-5">
-          <button type="button" class="btn btn-secondary">Edit</button>
-          <span style="width: 10px"></span>
-          <button type="button" class="btn btn-info">Save</button>
-        </div>
-      </form>
-    </div> -->
-
 
     <div class="dogInfo">
       <h1>User Profile</h1>
       <form>
-        <fieldset class="mb-3" id="dogInfoFields">
+        <fieldset class="mb-3" id="personalInfoFields" disabled>
           <div class="form-group">
-            <label class="forText" for="breed-input">Search for a dog breed:</label>
-            <input type="text" id="breedInput">
-          </div>
-          <!-- <div class="form-group">
-            <label class="forText" for="breed-dropdown">Select a dog breed:</label>
-            <select id="breed-dropdown">
-              <option value="">-- Select a breed --</option>
-            </select>
-          </div> -->
-          <div class="form-group">
-            <label class="forText">Name :</label>
+            <label class="forText" for="breed-input">Name: </label>
             <input type="text" id="nameInput">
           </div>
           <div class="form-group">
-            <label class="forText">Age :</label>
-            <input type="text" id="ageInput">
+            <label class="forText">School: </label>
+            <input type="text" id="schoolInput">
           </div>
           <div class="form-group">
-            <label>Length of hair :</label>
-            <input type="text" id="hairInput" placeholder="short/ medium / long">
-            <!-- <input type="checkbox" id="sHair" name="sHair" value="hair1">
-            <label for="sHair"> Short</label>
-            <input type="checkbox" id="mHair" name="mHair" value="hair2">
-            <label for="mHair"> Medium</label>
-            <input type="checkbox" id="lHair" name="lHair" value="hair3">
-            <label for="lHair"> Long</label> -->
+            <label class="forText">Country: </label>
+            <input type="text" id="countryInput">
           </div>
-
-          <!-- For upload the imgaes -->
-          <form>
-            <input type="file" id="imageUpload" accept="image/*">
-            <button type="button" onclick="uploadImage()">Upload</button>
-          </form>
-          
+          <div class="form-group">
+            <label>City: </label>
+            <input type="text" id="cityInput">
+          </div>          
         </fieldset>
+
         <div class="d-flex justify-content-end mt-5">
           <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
           <span style="width: 10px"></span>
