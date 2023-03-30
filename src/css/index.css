@@ -54,10 +54,30 @@
 
 .mainDog{
     width: 100%;
-    padding: 0%;
-    background-image: url('https://westernfinancialgroup.ca/get/files/image/galleries/DoNotLeaveYourDogInAHotCar.jpg');
-    background-attachment: fixed;
-    background-size: 100% 59%;
+    background-color: #cccccc;
+    height: 740px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: url(https://www.adamspetcare.com/-/media/Project/OneWeb/Adams/Images/Photos/Blog/Article/how-do-dogs-get-heartworm.jpg)
+}
+
+.logo {
+    color: white;
+    font-size: 95px;
+    margin-right: 38%;
+    padding-top: 9%;
+}
+
+.slogan{
+    color: white;
+    font-size: 20px;
+    margin-right: 38%;
+}
+
+.start_btn{
+    margin-right: 39%;
 }
 
 h2{
@@ -86,16 +106,22 @@ h2{
 }
 
 .introSecond {
-    padding: 0 10%;
-    font-size: small;
+    padding-top: 1%;
+    font-size: x-large;
+    margin-bottom: 0;
 }
 
 .icon {
     background-color: #EDF1D6;
     border-radius: 100%;
-    margin: 5% 30%;
+    margin: 3% 25%;
     width: 30%;
+    height: 110%;
 
+}
+
+.info{
+    width: 100px;
 }
 
 .icon {
@@ -115,49 +141,59 @@ h2{
 }
 
 
-@media only screen and (min-width: 960px) {
+@media only screen and (max-width: 900px) {
     .brandN {
         font-size: 40px;
     }
     .col-3{
         padding: 0;
     }
+
     .mainDog{
-        background-size: 100% 100%;
+        
+        background-color: #cccccc;
+        height: 410px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        background-image: url(https://www.adamspetcare.com/-/media/Project/OneWeb/Adams/Images/Photos/Blog/Article/how-do-dogs-get-heartworm.jpg)
     }
-    h2{
-        color: white;
+
+    .logo {
+        font-size: 50px;
     }
-    
-    .introHeading{
-        padding: 5% 0 0 0;
+
+    .slogan {
+        font-size: medium;
     }
 
     .introSecond{
-        margin-bottom: 5%;
+        font-size: 0;
+    }
+
+    .info_card{
+        padding: 0;
+    }
+
+    h2{
+        color: white;
     }
 
     .tempImg{
+        margin: 0 auto;
         width: 30%;
-
     }
 
     .icon{
         border-radius: 10%;
         padding: 0;
-        margin: 0;
+        margin-left: 100px;
         margin-left: 10px;
     }
 
     .hurt1{
         margin-top: 150px;
-    }
-
-    .hurtImg1,
-    .IceDogImg {
-        width: 100%;
-        padding: 0;
-        background-color: white;
     }
 
 
