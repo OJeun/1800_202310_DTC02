@@ -32,4 +32,23 @@ function getName() {
 
 }
 
+function logout() {
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      console.log("User signed out successfully.");
+  
+      // Clear local storage data
+      localStorage.removeItem("currentDogName");
+      localStorage.removeItem("currentDogId");
+  
+  
+      // Redirect to the login page
+      window.location.href = "login.html";
+    }).catch(function(error) {
+      // An error happened.
+      console.error("Error signing out: ", error);
+    });
+  }
+  
+
 

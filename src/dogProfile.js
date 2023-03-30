@@ -23,7 +23,8 @@ function addDog(event) {
     }).then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
         document.getElementById("dogProfileForm").submit();
-        window.location.href = "main.html"
+        alert("Dog added successfully!");
+        window.location.href = "main.html";
     }).catch((error) => {
         console.log("Error adding document: ", error);
     });
