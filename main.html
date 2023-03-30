@@ -8,8 +8,8 @@
   <title>Document</title>
   <link rel="stylesheet" href="./src/css/hydration.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="src/hydration.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -22,9 +22,11 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
 
   <style>
-    #homepage {
-      background-color: blue;
-      color: red;
+    .bottomNavBar a {
+      text-decoration: none; /* remove underlining */
+    }
+    a:hover {
+            text-decoration: underline;
     }
   </style>
   <script>
@@ -55,14 +57,12 @@
             const listOfDogs = document.getElementById("dogsList");
             dogsArray.forEach(dog => {
               console.log("hello");
-              listOfDogs.innerHTML += ` <div id="dogCard">
-                                            <a href="#" data-dog-id="${dog.id}" onclick = "switchDog()">${dog.name}</a>
-                                     </div>
+              listOfDogs.innerHTML += ` 
                                      <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="./images/Nahra.jpeg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">${dog.name}</h5>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-primary" data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select this Dog</a>
       </div>
     </div>`;
 
@@ -75,6 +75,15 @@
           console.log(dogsArray);
         }
       });
+   
+      if (localStorage.getItem("currentDogName") !== null) {
+      console.log("this condition works")
+      document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
+    } else {
+      console.log("this condition does not work")
+    }
+    
+    
     };
 
   </script>
@@ -88,7 +97,7 @@
     <div class="container-fluid bg-light text-dark p-5">
       <div class="container bg-light p-5">
           <h1 class="display-4">
-              Good morning, <span id="name-goes-here">Name</span> <br> <br> Choose your dog!
+              Good morning, <span id="name-goes-here">Name</span> <br> <br> <span id ="currentDogSelected">Choose your dog!</span>
           </h1>
       </div>
   </div>
@@ -101,8 +110,8 @@
     <select id="breed-dropdown">
       <option value="">-- Select a breed --</option>
     </select>
-    <button onclick = "addDog()">submit</button>
-  </main> -->
+    <button onclick = "addDog()">submit</button> -->
+  </main>
 
 
 

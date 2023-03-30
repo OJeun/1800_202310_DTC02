@@ -19,7 +19,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
   <script src="./src/firebaseAPI_TEAM02.js"></script>
-
+<link rel="stylesheet" href="./src/css/hydration.css">
   <style>
     #homepage {
       background-color: blue;
@@ -32,46 +32,18 @@
   <nav id="navbarPlaceholder"></nav>
 
   <main>
-    <!-- <div class="container">
-      <h1>User Profile </h1>
-      <form>
-        <fieldset class="mb-3" id="personalInfoFields" disabled>
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-          </div>
-          <div class="form-group">
-            <label>School</label>
-            <input type="text" id="schoolInput" class="form-control" placeholder="Enter your school">
-          </div>
-          <div class="form-group">
-            <label>City</label>
-            <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
-          </div>
-        </fieldset>
-        <div class="d-flex justify-content-end mt-5">
-          <button type="button" class="btn btn-secondary">Edit</button>
-          <span style="width: 10px"></span>
-          <button type="button" class="btn btn-info">Save</button>
-        </div>
-      </form>
-    </div> -->
+
 
 
     <div class="dogInfo">
       <h1>Dog Profile</h1>
-      <form>
+      <form id ="dogProfileForm">
         <fieldset class="mb-3" id="dogInfoFields">
           <div class="form-group">
             <label class="forText" for="breed-input">Search for a dog breed:</label>
             <input type="text" id="breedInput">
           </div>
-          <!-- <div class="form-group">
-            <label class="forText" for="breed-dropdown">Select a dog breed:</label>
-            <select id="breed-dropdown">
-              <option value="">-- Select a breed --</option>
-            </select>
-          </div> -->
+
           <div class="form-group">
             <label class="forText">Name :</label>
             <input type="text" id="nameInput">
@@ -83,29 +55,31 @@
           <div class="form-group">
             <label>Length of hair :</label>
             <input type="text" id="hairInput" placeholder="short/ medium / long">
-            <!-- <input type="checkbox" id="sHair" name="sHair" value="hair1">
-            <label for="sHair"> Short</label>
-            <input type="checkbox" id="mHair" name="mHair" value="hair2">
-            <label for="mHair"> Medium</label>
-            <input type="checkbox" id="lHair" name="lHair" value="hair3">
-            <label for="lHair"> Long</label> -->
+
           </div>
 
           <!-- For upload the imgaes -->
-          <form>
+          <!-- <form>
             <input type="file" id="imageUpload" accept="image/*">
             <button type="button" onclick="uploadImage()">Upload</button>
-          </form>
+          </form> -->
           
         </fieldset>
         <div class="d-flex justify-content-end mt-5">
           <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
           <span style="width: 10px"></span>
-          <button type="button" class="btn btn-info" onclick ="addDog()" id="saveButton">Save</button>
+          <button type="submit" class="btn btn-info" onclick ="addDog()" id="saveButton">Save</button>
         </div>
       </form>
     </div>
-
+    <script>
+        document.getElementById("dogProfileForm").addEventListener("submit", function(event) {
+          console.log("DOG PROFILE SUBMITTED")
+          event.preventDefault();
+          window.location.href = "main.html";
+          alert("Dog profile saved!");
+        });
+    </script>
 
   </main>
 

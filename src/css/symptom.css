@@ -61,7 +61,8 @@
     margin-right: 0px;
 }
 
-.body {
+.symptom_body {
+    padding-top: 80px;
     margin: 0px;
     padding-bottom: auto;
     height: 100vh;

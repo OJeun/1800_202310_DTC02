@@ -8,7 +8,10 @@
     <title>nav</title>
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/footer.css">
- <style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+<style>
     .dogProfile {
         width: 50px;
         height: 50px;
@@ -40,40 +43,51 @@
 </head>
 
 <body style="background-color: #fdfbda;">
-    <nav>
-        <div class="nav-cont container-fluid">
-            <div class="row">
-                <div class="profile" class="col-3">
-                    <a class="navbar-brand" href="#">
-                        <img class="dogProfile" src="/images/profile.png" class="d-inline-block align-top" alt="" onclick="getName()" >
-                        <ul id="nav-list" class="dropdown-menu">
-                            <li class="sub-item">
-                                <a href = "#" id="dog1">Add Dog+</a>
-                            </li>
-                            <li class="sub-item">
-                                <a id="dog2">Add Dog+</a>
-                            </li>
-                            <li class="sub-item">
-                                <a id="dog3">Add Dog+</a>
-                            <li class="sub-item">
-                                <a id="dog4">Add Dog+</a>
-                            </li>
-                        </ul>
-                    </a>
-                </div>
-
-                <div class="logo" class="col brandName">
-                    <img class="dogImg" src="/images/pawprint.png">
-                    <!-- <span class="brandN" onclick="getName()">HotDog</span> -->
-                    <!-- <img class="dogProfile" src="/images/profile.png" class="d-inline-block align-top" alt="" onclick="getName()" > -->
-                    <h1> HotDog</h1>
-                    <img class="dogImg" src="/images/pawprint.png">
-                </div>
-                <!-- <div class="col-3 signup">
-                    <br class="blankbtwlog">
-                    <a href="/login.html" class="btn btn-info" role="button">Log Out</a>
-                </div> -->
-    </nav>
+    <nav class="navbar bg-light fixed-top">
+        <div class="container-fluid">
+            
+            <span class="brandN" onclick="getName()">
+                <img class="dogImg" src="/images/pawprint.png">
+                    <span>HotDog</span>
+                <img class="dogImg" src="/images/pawprint.png">
+            </span>
+            
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <img class="dogProfile" src="/images/profile.png" class="d-inline-block align-top" alt="" onclick="getName()" >
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Edit User Profile</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <button>Logout</button>
+            </div>
+          </div>
+        </div>
+      </nav>
 
 
 

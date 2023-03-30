@@ -2,7 +2,9 @@
     text-align: center;
     margin-top: 20px;
 }
-
+.hydrationBody{
+    padding-top: 80px;
+}
 .card {
     width: 80%;
     border: 1px lightgray solid;
@@ -24,4 +26,11 @@
 
 #cancelButton {
     display: none;
+}
+body {
+    color: #e4d5c8;
+}
+main {
+    padding-top: 100px;
+    padding-bottom: 200px;
 }

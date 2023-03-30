@@ -1,5 +1,5 @@
 
-.nav_link :active {
+.footer_link :active {
     background-color: blue;
     color: red;
 }
