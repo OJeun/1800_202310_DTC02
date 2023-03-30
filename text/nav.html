@@ -13,14 +13,37 @@
         width: 50px;
         height: 50px;
     }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .profile {
+        width: 30%
+    }
+    
+    .logo {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .dogImg {
+        object-fit: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 0px;
+    }
  </style>
 </head>
 
-<body>
+<body style="background-color: #fdfbda;">
     <nav>
         <div class="nav-cont container-fluid">
             <div class="row">
-                <div class="col-3">
+                <div class="profile" class="col-3">
                     <a class="navbar-brand" href="#">
                         <img class="dogProfile" src="/images/profile.png" class="d-inline-block align-top" alt="" onclick="getName()" >
                         <ul id="nav-list" class="dropdown-menu">
@@ -39,7 +62,7 @@
                     </a>
                 </div>
 
-                <div class="col brandName">
+                <div class="logo" class="col brandName">
                     <img class="dogImg" src="/images/pawprint.png">
                     <!-- <span class="brandN" onclick="getName()">HotDog</span> -->
                     <!-- <img class="dogProfile" src="/images/profile.png" class="d-inline-block align-top" alt="" onclick="getName()" > -->
