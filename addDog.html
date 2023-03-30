@@ -68,18 +68,17 @@
         <div class="d-flex justify-content-end mt-5">
           <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
           <span style="width: 10px"></span>
-          <button type="submit" class="btn btn-info" onclick ="addDog()" id="saveButton">Save</button>
+          <button type="submit" class="btn btn-info" onclick ="addDog(event)" id="saveButton">Save</button>
         </div>
       </form>
     </div>
-    <script>
+    <!-- <script>
         document.getElementById("dogProfileForm").addEventListener("submit", function(event) {
           console.log("DOG PROFILE SUBMITTED")
-          event.preventDefault();
           window.location.href = "main.html";
           alert("Dog profile saved!");
         });
-    </script>
+    </script> -->
 
   </main>
 

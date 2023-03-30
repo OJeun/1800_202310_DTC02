@@ -1,8 +1,8 @@
 
 
 
-function addDog() {
-
+function addDog(event) {
+    event.preventDefault()
     console.log('hello')
     const dogTakeName = document.getElementById("nameInput");
     const dogName = nameInput.value;
@@ -22,6 +22,8 @@ function addDog() {
         breed: dogBreed
     }).then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
+        document.getElementById("dogProfileForm").submit();
+        window.location.href = "main.html"
     }).catch((error) => {
         console.log("Error adding document: ", error);
     });
