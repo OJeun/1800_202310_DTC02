@@ -94,6 +94,8 @@
 
 
     <script>
+        document.getElementById("offcanvasNavbarLabel").textContent = localStorage.getItem("username");
+        
         document.querySelector('.dogProfile').addEventListener('click', function () {
             const navList = document.getElementById('nav-list');
             if (navList.style.display === 'none') {

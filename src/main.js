@@ -44,6 +44,8 @@ function insertNameFromFirestore() {
         //get the user name
         var user_Name = userDoc.data().name;
         console.log(user_Name);
+        localStorage.setItem("username", user_Name);
+        document.getElementById("offcanvasNavbarLabel").textContent = user_Name;
         $("#name-goes-here").text(user_Name); //jquery
         // document.getElementByID("name-goes-here").innetText=user_Name;
     })
