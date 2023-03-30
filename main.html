@@ -35,7 +35,6 @@
       await firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
           var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
-
           dogsCollection.get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               // Access the fields in the document using the data() method
@@ -48,15 +47,9 @@
                 breed: dogData.breed
               });
 
-              // Log the fields to the console
-              // console.log("Dog name:", dogData.name);
-              // console.log("Dog breed:", dogData.breed);
-              // console.log("Dog age:", dogData.age);
-              // console.log(dogId);
             });
             const listOfDogs = document.getElementById("dogsList");
             dogsArray.forEach(dog => {
-              console.log("hello");
               listOfDogs.innerHTML += ` 
                                      <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="./images/Nahra.jpeg" alt="Card image cap">
@@ -65,9 +58,6 @@
         <a href="#" class="btn btn-primary" data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select this Dog</a>
       </div>
     </div>`;
-
-
-
             });
           }).catch(error => {
             console.log("Error getting dogs collection:", error);
@@ -76,22 +66,32 @@
         }
 
 
-        if (localStorage.getItem("currentDogName") !== null) {
+      if (localStorage.getItem("currentDogName") !== null) {
       console.log("you have a dog selected")
       document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
     } else {
       console.log("current dog is null")
     }
-      });
+      
+    var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
+      var noDogs;
+          dogsCollection.get().then(querySnapshot => {
+            if (querySnapshot.empty) {
+              console.log("You have dogs");
+              document.getElementById("currentDogSelected").innerHTML = "Get Started by adding a dog";
+            } 
+          }).catch(error => {
+            console.log("Error getting document:", error);
+          });
+  
+  
+  
+  
+  });
    
-    //   if (localStorage.getItem("currentDogName") !== null) {
-    //   console.log("this condition works")
-    //   document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
-    // } else {
-    //   console.log("this condition does not work")
-    // }
+
     
-    
+
     };
 
   </script>
@@ -105,7 +105,7 @@
     <div class="container-fluid bg-light text-dark p-5">
       <div class="container bg-light p-5">
           <h1 class="display-4">
-              Good morning, <span id="name-goes-here"></span> <br> <br> <span id ="currentDogSelected">Choose your dog!</span>
+              Good morning, <span id="name-goes-here"></span> <br> <br> <span id ="currentDogSelected">Please Select a dog</span>
           </h1>
       </div>
   </div>
