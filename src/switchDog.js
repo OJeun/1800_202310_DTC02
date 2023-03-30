@@ -11,7 +11,7 @@ function switchDog() {
     console.log(localStorage.getItem("currentDogId"))
     console.log(currentDogName)
     currentDogMessage.textContent = `You are currently viewing dog: ${currentDogName}`
-    console.log(currentDogMessage)
+    
 }
 // function switchDog() {
 //     console.log("fuckthisshit")

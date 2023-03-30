@@ -74,14 +74,22 @@
           });
           console.log(dogsArray);
         }
-      });
-   
-      if (localStorage.getItem("currentDogName") !== null) {
-      console.log("this condition works")
+
+
+        if (localStorage.getItem("currentDogName") !== null) {
+      console.log("you have a dog selected")
       document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
     } else {
-      console.log("this condition does not work")
+      console.log("current dog is null")
     }
+      });
+   
+    //   if (localStorage.getItem("currentDogName") !== null) {
+    //   console.log("this condition works")
+    //   document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
+    // } else {
+    //   console.log("this condition does not work")
+    // }
     
     
     };
@@ -97,7 +105,7 @@
     <div class="container-fluid bg-light text-dark p-5">
       <div class="container bg-light p-5">
           <h1 class="display-4">
-              Good morning, <span id="name-goes-here">Name</span> <br> <br> <span id ="currentDogSelected">Choose your dog!</span>
+              Good morning, <span id="name-goes-here"></span> <br> <br> <span id ="currentDogSelected">Choose your dog!</span>
           </h1>
       </div>
   </div>

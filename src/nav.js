@@ -40,6 +40,7 @@ function logout() {
       // Clear local storage data
       localStorage.removeItem("currentDogName");
       localStorage.removeItem("currentDogId");
+      localStorage.removeItem("username")
   
   
       // Redirect to the login page
