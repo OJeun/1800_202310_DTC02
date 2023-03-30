@@ -30,6 +30,7 @@ function getName() {
 function logout() {
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
+      window.location.href = "index.html";
       console.log("User signed out successfully.");
   
       // Clear local storage data
@@ -39,7 +40,7 @@ function logout() {
   
   
       // Redirect to the login page
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }).catch(function(error) {
       // An error happened.
       console.error("Error signing out: ", error);
