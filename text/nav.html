@@ -49,7 +49,7 @@
       
               <span class="brandN" onclick="getName()">
                   <img class="dogImg" src="/images/pawprint.png">
-                      <span>HotDog</span>
+                      <span><h2 style="display: inline">HotDog</h2></span>
                   <img class="dogImg" src="/images/pawprint.png">
               </span>
       
@@ -65,7 +65,33 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Edit User Profile</a>
+                    <!-- <a class="nav-link active" aria-current="page" href="#">Edit User Profile</a> -->
+                    <a href="#" id="showFormLink">Edit User Profile</a>
+
+                              <div id="formModal" class="modal">
+                                <div class="modal-content">
+                                  <span class="close">&times;</span>
+                                  <form id="updateProfileForm">
+                                    <!-- Form fields go here -->
+                                    <div class="form-row">
+                                      <label for="name">Name:</label>
+                                      <input type="text" id="editNameInput" name="name" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                      <label for="email">Email:</label>
+                                      <input type="email" id="editEmailInput" name="email" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                      <label for="school">School:</label>
+                                      <input id="editSchoolInput" name="message" required></input>
+                                    </div>
+                                    
+                                    <button type="submit">Submit</button>
+                                  </form>
+                                </div>
+                              </div>
                   </li>
                   <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
