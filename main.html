@@ -23,10 +23,12 @@
 
   <style>
     .bottomNavBar a {
-      text-decoration: none; /* remove underlining */
+      text-decoration: none;
+      /* remove underlining */
     }
+
     a:hover {
-            text-decoration: underline;
+      text-decoration: underline;
     }
   </style>
   <script>
@@ -44,15 +46,19 @@
                 id: dogId,
                 name: dogData.name,
                 age: dogData.age,
-                breed: dogData.breed
+                breed: dogData.breed,
+                profilePic: dogData.profilePic
               });
 
             });
             const listOfDogs = document.getElementById("dogsList");
             dogsArray.forEach(dog => {
+            if (dog.profilePic == null) {
+              dog.profilePic = "https://easydrawingguides.com/wp-content/uploads/2018/09/Snoopy-10.png"
+            }  
               listOfDogs.innerHTML += ` 
                                      <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="./images/Nahra.jpeg" alt="Card image cap">
+                                      <img id="mypic-goes-here" src="${dog.profilePic}" alt="./images/blah.jpeg" width=50 height=50 />
       <div class="card-body">
         <h5 class="card-title">${dog.name}</h5>
         <a href="#" class="btn btn-primary" data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select this Dog</a>
@@ -66,31 +72,31 @@
         }
 
 
-      if (localStorage.getItem("currentDogName") !== null) {
-      console.log("you have a dog selected")
-      document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
-    } else {
-      console.log("current dog is null")
-    }
-      
-    var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
-      var noDogs;
-          dogsCollection.get().then(querySnapshot => {
-            if (querySnapshot.empty) {
-              console.log("You have dogs");
-              document.getElementById("currentDogSelected").innerHTML = "Get Started by adding a dog";
-            } 
-          }).catch(error => {
-            console.log("Error getting document:", error);
-          });
-  
-  
-  
-  
-  });
-   
+        if (localStorage.getItem("currentDogName") !== null) {
+          console.log("you have a dog selected")
+          document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
+        } else {
+          console.log("current dog is null")
+        }
 
-    
+        var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
+        var noDogs;
+        dogsCollection.get().then(querySnapshot => {
+          if (querySnapshot.empty) {
+            console.log("You have dogs");
+            document.getElementById("currentDogSelected").innerHTML = "Get Started by adding a dog";
+          }
+        }).catch(error => {
+          console.log("Error getting document:", error);
+        });
+
+
+
+
+      });
+
+
+
 
     };
 
@@ -104,11 +110,12 @@
   <main>
     <div class="container-fluid bg-light text-dark p-5">
       <div class="container bg-light p-5">
-          <h1 class="display-4">
-              Good morning, <span id="name-goes-here"></span> <br> <br> <span id ="currentDogSelected">Please Select a dog</span>
-          </h1>
+        <h1 class="display-4">
+          Good morning, <span id="name-goes-here"></span> <br> <br> <span id="currentDogSelected">Please Select a
+            dog</span>
+        </h1>
       </div>
-  </div>
+    </div>
     <button><a href="addDog.html">+Add your dog</a></button>
     <div id="dogsList"></div>
     <!-- <label for="breed-input">Search for a dog breed:</label>
@@ -123,7 +130,7 @@
 
 
 
-    <!-- <div class="card" style="width: 18rem;">
+  <!-- <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="./images/Nahra.jpeg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
@@ -133,11 +140,12 @@
 
 
 
-    <nav id="footerPlaceholder"></nav>
+  <nav id="footerPlaceholder"></nav>
 
-    <script src="./src/skeleton.js"></script>
-    <script src="./src/main.js"></script>
-    <script src="./src/switchDog.js"></script>
+  <script src="./src/skeleton.js"></script>
+  <script src="./src/main.js"></script>
+  <script src="./src/switchDog.js"></script>
+  <script src="./src/dogProfile.js"></script>
 
 
 </body>

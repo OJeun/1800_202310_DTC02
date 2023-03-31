@@ -16,10 +16,11 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <script src="./src/firebaseAPI_TEAM02.js"></script>
-<link rel="stylesheet" href="./src/css/hydration.css">
+  <link rel="stylesheet" href="./src/css/hydration.css">
   <style>
     #homepage {
       background-color: blue;
@@ -37,7 +38,7 @@
 
     <div class="dogInfo">
       <h1>Dog Profile</h1>
-      <form id ="dogProfileForm">
+      <form id="dogProfileForm">
         <fieldset class="mb-3" id="dogInfoFields">
           <div class="form-group">
             <label class="forText" for="breed-input">Search for a dog breed:</label>
@@ -59,16 +60,16 @@
           </div>
 
           <!-- For upload the imgaes -->
-          <!-- <form>
-            <input type="file" id="imageUpload" accept="image/*">
-            <button type="button" onclick="uploadImage()">Upload</button>
-          </form> -->
-          
+          <div class="container text-center py-3">
+            <img id="mypic-goes-here" src="images/blah.jpeg" width=50 height=50 />
+            <input type="file" onclick="chooseFileListener()" id="mypic-input" accept="image/*" />
+          </div>
+
         </fieldset>
         <div class="d-flex justify-content-end mt-5">
           <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
           <span style="width: 10px"></span>
-          <button type="submit" class="btn btn-info" onclick ="addDog(event)" id="saveButton">Save</button>
+          <button type="submit" class="btn btn-info" onclick="addDog(event);saveUserInfo()" id="saveButton">Save</button>
         </div>
       </form>
     </div>
@@ -83,7 +84,7 @@
   <script src="./src/dogProfile.js"></script>
   <script src="./src/main.js"></script>
   <script src="./src/profile.js"></script>
-  
+
 
 
 </body>
