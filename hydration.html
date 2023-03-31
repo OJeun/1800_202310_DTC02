@@ -36,8 +36,17 @@
         <div class="hydrationBody">
           <div class="texty">
               <h1>DRINK WATER</h1>
-              <span id = "waterReminder"><p> It is recommended for your dog to drink water every  x hours</p></span>
-
+              <span id = "waterReminder">It is recommended for your dog to drink water every hours</span>
+              <script>
+                waterReminderText= document.getElementById("waterReminder");
+                dogWaterName = localStorage.getItem("currentDogName");
+                if (dogWaterName == null) {
+                  waterReminderText.innerHTML = "You Don't Have a Dog Selected! Go back to main page and select a dog"
+                } else {
+                  waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
+                }
+                // waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
+              </script>
           </div>
           <div class="card" id="reminder" style="width: 18rem;">
               <div class="card-body">
