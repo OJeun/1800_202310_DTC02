@@ -1,5 +1,6 @@
 * {
     text-align: center;
+    font-family: 'Sen'
 }
 /* Navbar */
 
@@ -111,25 +112,13 @@ h2{
     margin-bottom: 0;
 }
 
-.icon {
-    background-color: #EDF1D6;
-    border-radius: 100%;
-    margin: 3% 25%;
-    width: 30%;
-    height: 110%;
 
-}
 
 .info{
     width: 100px;
 }
 
-.icon {
-    background-color: #EDF1D6;
-    border-radius: 100%;
-    width: 50%;
 
-}
 
 
 
@@ -142,6 +131,10 @@ h2{
 
 
 @media only screen and (max-width: 900px) {
+    .logo {
+        font-family: "Montserrat";
+    }
+
     .brandN {
         font-size: 40px;
     }
@@ -150,39 +143,64 @@ h2{
     }
 
     .mainDog{
-        
+        margin-bottom: 15px;        
         background-color: #cccccc;
-        height: 410px;
+        height: 360px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         background-image: url(https://www.adamspetcare.com/-/media/Project/OneWeb/Adams/Images/Photos/Blog/Article/how-do-dogs-get-heartworm.jpg)
+
     }
 
     .logo {
-        font-size: 50px;
+        font-size: 35px;
+        padding-top: 80px;
+        margin-bottom: 5px;
     }
-
+    
+    .start_btn {
+        padding: 5px;
+        font-size: x-small;
+    }
     .slogan {
-        font-size: medium;
+        font-family: 'Kalam';
+        font-size: small;
+        margin-bottom: 5px;
+        
     }
 
+    .dog_matter {
+        padding-top: 10px;
+        font-size: large;
+        font-family: 'Playball';
+    }
+    
+    .aim {
+        font-family: 'Dosis', sans-serif;
+
+    }
     .introSecond{
         font-size: 0;
     }
 
-    .info_card{
+    .card_info{
+        font-size: 10px;
         padding: 0;
     }
 
     h2{
         color: white;
     }
-
-    .tempImg{
-        margin: 0 auto;
+    .hydro_card {
         width: 30%;
+        height: 50%;
+        border-color: white;
+    }
+    .cardImg{
+        margin: 0 auto;
+        width: 110%;
     }
 
     .icon{

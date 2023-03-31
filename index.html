@@ -28,9 +28,12 @@
 
     <link rel="stylesheet" href="/src/css/index.css">
 
-
-    <title>HotDog</title>
-    <script src="./src/index.js"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Kalam:wght@300&family=Merriweather:wght@300&family=Montserrat:wght@600&family=Playball&family=Sen&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -66,42 +69,37 @@
             <div class="textIntro">
                 <p class="logo">HotDog</p>
                 <p class="slogan"> Save your dog from the heat</p>
-                <button type="button" class="btn btn-light start_btn" id="getStarted" onclick="loginFunc()">Let's get <span
-                        style="color: red;">started</span></button>
+                <button type="button" class="btn btn-light start_btn" id="getStarted" onclick="loginFunc()">Let's get
+                    <span style="color: red;">started</span></button>
             </div>
+
         </div>
+        <p>
+            <b class="dog_matter">"Every dog matters"</b>
+            <br>
+            <small class="aim">We aim to make every dog be safe and happy</small>
+        </p>
         <div>
-            <!-- <h4 class="introHeading">Saving dogs from the heat</h4> -->
-            <!-- <p class="introSecond">The information needed to keep dogs safe from the heat.</p> -->
-            <div class="container-fluid">
-                <div class="row info_card">
-                    <div class="row col-lg">
-                        <div class="icon col-lg">
-                            <img class="tempImg" src="/images/temperature.png">
-                        </div>
-                        <div class="col-lg">
-                            <p class="info">Hytration Reminder</p>
-                        </div>
-                    </div>
-                    <div class="row col-lg">
-                        <div class="icon col-lg">
-                            <img class="tempImg" src="/images/temperature.png">
-                        </div>
-                        <div class="col-lg">
-                            <p class="info">Symptom Checker</p>
-                        </div>
-                    </div>
-                    <div class="row col-lg">
-                        <div class="icon col-lg">
-                            <img class="tempImg" src="/images/temperature.png">
-                        </div>
-                        <div class="col-lg">
-                            <p class="info">Temperature Check</p>
-                        </div>
-                    </div>
+
+        </div>
+        <div class="container-fluid">
+            <div class="row info_card">
+                <div class="col">
+                    <div><img class="cardImg" src="/images/drinking.jpeg"></div>
+                    <div class="hydration card_info">Hydration Reminder</div>
+                </div>
+                <div class="col">
+                    <div><img class="cardImg" src="/images/drinking.jpeg"></div>
+                    <div class="symptom card_info">Hydration Reminder</div>
+                </div>
+                <div class="col">
+                    <div><img class="cardImg" src="/images/panting_dog.png"></div>
+                    <div class="temperature card_info">Hydration Reminder</div>
                 </div>
             </div>
-            <!-- <div class="container-fluid dog1">
+        </div>
+
+        <!-- <div class="container-fluid dog1">
                 <div class="row hurtDog hurt1">
                     <div class="col-lg">
                         <img class="hurtImg1" src="./images/Hurt1.jpeg">
@@ -138,14 +136,14 @@
             </div>
         </div> -->
 
-            <!-- our own footer goes here-->
+        <!-- our own footer goes here-->
 
-
-            <!---------------------------------------------->
-            <!-- Your own JavaScript functions go here    -->
-            <!---------------------------------------------->
-            <script src="./src/firebaseAPI_TEAM02.js"></script>
-
+       
+        <!---------------------------------------------->
+        <!-- Your own JavaScript functions go here    -->
+        <!---------------------------------------------->
+        <script src="./src/firebaseAPI_TEAM02.js"></script>
+        <p style="font-size: xx-small; margin-top: 20%;">@copyright 2023 Hoda and her 1800 3 children</p>
 
     </main>
 </body>
