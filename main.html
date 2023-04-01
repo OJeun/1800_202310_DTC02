@@ -60,7 +60,7 @@
                                       <img id="mypic-goes-here" src="${dog.profilePic}" alt="./images/blah.jpeg" width=50 height=50 />
       <div class="card-body">
         <h5 class="card-title">${dog.name}</h5>
-        <a href="#" class="btn btn-primary" data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select this Dog</a>
+        <a href="#" class="btn btn-primary btn-custom" style="background-color: var(--third-color); color:rgb(248, 248, 248)" data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select this Dog</a>
       </div>
     </div>`;
             });
@@ -121,9 +121,10 @@
     <div id="dogsList">
       
     </div>
-    <div class="addDogButton"><button><a href="addDog.html">+Add your dog</a></button></div>
-    
-
+    <div class="addDogButton">
+      <a href="addDog.html" class="btn btn-primary btn-custom" style="background-color: var(--third-color); color:rgb(248, 248, 248); width:80%;
+      border-radius: 50px; box-shadow: inset;">Add Your Dog</a>
+    </div>
   </main>
 
 

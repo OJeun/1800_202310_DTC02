@@ -11,8 +11,9 @@ body{
     background-color: white;
     display: flex;
     overflow-x: auto;
-    
 }
+
+
 
 .footer__link {
     display: flex;
@@ -26,7 +27,8 @@ body{
     font-family: sans-serif;
     font-size: 13px;
     color: black;
-    background-color: var(--primary--color);
+    /* background-color: var(--primary--color);,background-color: var(--primary--color); */
+    background-color: white;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.1s ease-in-out;
