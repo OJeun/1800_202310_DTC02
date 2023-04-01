@@ -81,15 +81,6 @@
     margin-right: 39%;
 }
 
-h2{
-    color: black;
-}
-
-
-.mainDog h2 {
-    padding: 30% 30%
-}
-
 .dogMain{
     width: 100%;
     height: 100%;
@@ -97,14 +88,8 @@ h2{
 
 
 /* Main part 2 */
-.tempImg {
-    width: 50%;
-    padding: 5%;
-}
 
-.introHeading{
-    padding: 8% 0 0.5%;
-}
+
 
 .introSecond {
     padding-top: 1%;
@@ -113,20 +98,8 @@ h2{
 }
 
 
-
 .info{
     width: 100px;
-}
-
-
-
-
-
-.hurtImg1,
-.IceDogImg {
-    width: 100%;
-    padding: 30px;
-    background-color: #EDF1D6;
 }
 
 
@@ -135,15 +108,9 @@ h2{
         font-family: "Montserrat";
     }
 
-    .brandN {
-        font-size: 40px;
-    }
-    .col-3{
-        padding: 0;
-    }
-
+  
     .mainDog{
-        margin-bottom: 15px;        
+        margin-bottom: 35px;        
         background-color: #cccccc;
         height: 360px;
         background-position: center;
@@ -155,7 +122,7 @@ h2{
     }
 
     .logo {
-        font-size: 35px;
+        font-size: 37px;
         padding-top: 80px;
         margin-bottom: 5px;
     }
@@ -164,71 +131,71 @@ h2{
         padding: 5px;
         font-size: x-small;
     }
+
     .slogan {
         font-family: 'Kalam';
         font-size: small;
-        margin-bottom: 5px;
+        margin-bottom: px;
         
     }
 
+
     .dog_matter {
-        padding-top: 10px;
-        font-size: large;
+        font-size: 24px;
         font-family: 'Playball';
     }
     
     .aim {
         font-family: 'Dosis', sans-serif;
-
+        font-size: 15px;
+        margin-bottom: 2px;
     }
+
+    .features{
+        margin-top: 20px;
+    }
+
     .introSecond{
         font-size: 0;
     }
 
-    .card_info{
+    .info_card{
         font-size: 10px;
         padding: 0;
+        margin-top: 20px;
     }
 
     h2{
         color: white;
     }
-    .hydro_card {
-        width: 30%;
-        height: 50%;
-        border-color: white;
-    }
+
     .cardImg{
         margin: 0 auto;
         width: 110%;
     }
 
-    .icon{
-        border-radius: 10%;
-        padding: 0;
-        margin-left: 100px;
-        margin-left: 10px;
+    .symptom {
+        padding-top: 23px;
     }
 
-    .hurt1{
-        margin-top: 150px;
+    .symptom_img{
+        padding-top: 20%;
+        width: 87%;
+    }
+
+    .panting_img{
+        padding-top: 20%;
+        width: 77%;
+    }
+
+    .temperature{
+        padding-top: 23px;
     }
 
 
-    .DogInstr{
-        background-color: white;
-        height: 100%;
-        margin: 30px;
-    }
 
-    .dog2 {
-        margin-top: 150px;
-    }
 
-    .DogInstr{
-        padding: 40px 0;
 
-        background-image: url(./images/highlighter.png);
-        background-size: 100% 130%;
-    }
+
+
 }
