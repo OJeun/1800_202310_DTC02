@@ -1,3 +1,5 @@
+
+
 .main-container-card {
     background-color: var(--primary--color);
     
@@ -13,9 +15,11 @@
     color: rgb(248, 248, 248)
 }
 
+
 #dogsList {
     margin-top: 0px;
     padding-top: 10%;
+    padding-bottom: 5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,13 +42,13 @@
 }
 
 .card {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     box-shadow: 5px 5px 5px grey;
     width: 95%;
     text-align: center;
 }
 .addDogButton {
-    padding-top: 1rem;
+    padding-top: 3vh;
     margin-top: -1px;
     text-align: center;
     background-color: var(--primary--color);
