@@ -7,7 +7,7 @@
     margin: 0;
     padding: 5vh;
     text-align: center;
-    height: 100vh;
+    height: 85.4vh;
 }
 
 #texty {
@@ -30,6 +30,7 @@
     text-align: center;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 #reminder {

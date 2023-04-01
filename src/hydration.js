@@ -9,6 +9,22 @@ var countdown;
 var endTime;
 
 function timer() {
+
+    var currentDogId = localStorage.getItem("currentDogId");
+    if (currentDogId == null) {
+        console.log("hours and minutes is empty")
+        let warning = document.createElement('span');
+        warning.textContent = "YOU MUST SELECT A DOG FIRST";
+        warning.style.color = "red";
+        var caption = document.getElementById('caption');
+
+        while(caption.firstChild) {
+            caption.removeChild(caption.firstChild);
+        }
+
+        caption.appendChild(warning);
+        return false;
+    }
     console.log("hello world");
     // Get the current dog ID
     var currentDogId = localStorage.getItem("currentDogId");

@@ -73,7 +73,7 @@
 
         if (localStorage.getItem("currentDogName") !== null) {
           console.log("you have a dog selected")
-          document.getElementById("currentDogSelected").innerHTML = "You are currently viewing dog: " + localStorage.getItem("currentDogName");
+          document.getElementById("currentDogSelected").innerHTML = "You are currently selected on dog: " + localStorage.getItem("currentDogName");
         } else {
           console.log("current dog is null")
         }
@@ -110,7 +110,7 @@
     <div class="container-fluid text-dark p-5 main-container-card">
       <div class="container p-5 secondary-container-card">
         <h1 class="display-4">
-          Good morning, <span id="name-goes-here"></span> 
+          Welcome, <span id="name-goes-here"></span> 
           <br><br> 
           <span id="currentDogSelected">Please Select a
             dog</span>
@@ -122,7 +122,7 @@
       
     </div>
     <div class="addDogButton">
-      <a href="addDog.html" class="btn btn-primary btn-custom" style="background-color: var(--third-color); color:rgb(248, 248, 248); width:80%;
+      <a href="addDog.html" class="btn btn-primary btn-custom" style="color:rgb(248, 248, 248); width:80%;
       border-radius: 50px; box-shadow: inset;">Add Your Dog</a>
     </div>
   </main>
