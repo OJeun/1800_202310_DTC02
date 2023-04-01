@@ -26,14 +26,14 @@ body{
     font-family: sans-serif;
     font-size: 13px;
     color: #444444;
-    background-color: white;
+    background-color: var(--primary--color);
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.1s ease-in-out;
 }
 
 .footer__link:hover {
-    color: #717F65
+    color: #009578
 }
 
 .link-active {

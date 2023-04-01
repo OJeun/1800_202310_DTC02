@@ -1,0 +1,31 @@
+.main-container-card {
+    background-color: green;
+
+}
+
+#dogsList {
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary--color);
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
+    position: relative;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 5px black
+}
+#dogsList button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

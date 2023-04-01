@@ -20,10 +20,11 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <script src="./src/firebaseAPI_TEAM02.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
-
+  <link rel="stylesheet" href="src/css/main.css">
   <style>
     #homepage{color: #009578;}
   </style>
+ 
   <script>
     window.onload = async function () {
       console.log("window on load successful");
@@ -101,35 +102,27 @@
   <nav id="navbarPlaceholder"></nav>
 
   <main>
-    <div class="container-fluid bg-light text-dark p-5">
-      <div class="container bg-light p-5">
+    <div class="container-fluid text-dark p-5 main-container-card">
+      <div class="container p-5 main-container-card">
         <h1 class="display-4">
-          Good morning, <span id="name-goes-here"></span> <br> <br> <span id="currentDogSelected">Please Select a
+          Good morning, <span id="name-goes-here"></span> 
+          <br><br> 
+          <span id="currentDogSelected">Please Select a
             dog</span>
         </h1>
       </div>
     </div>
+    
+    <div id="dogsList">
+      
+    </div>
     <button><a href="addDog.html">+Add your dog</a></button>
-    <div id="dogsList"></div>
-    <!-- <label for="breed-input">Search for a dog breed:</label>
-    <input type="text" id="breed-input">
-    <br>
-    <label for="breed-dropdown">Select a dog breed:</label>
-    <select id="breed-dropdown">
-      <option value="">-- Select a breed --</option>
-    </select>
-    <button onclick = "addDog()">submit</button> -->
+
   </main>
 
 
 
-  <!-- <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="./images/Nahra.jpeg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div> -->
+
 
 
 
