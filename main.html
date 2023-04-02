@@ -54,8 +54,8 @@
             });
             const listOfDogs = document.getElementById("dogsList");
             dogsArray.forEach(dog => {
-              if (dog.profilePic == null) {
-                dog.profilePic = "./images/.jpeg"
+              if (!dog.profilePic) {
+                dog.profilePic = "https://easydrawingguides.com/wp-content/uploads/2018/09/Snoopy-10.png"
               }
               console.log(dog.profilePic);
               listOfDogs.innerHTML += ` 
