@@ -30,25 +30,13 @@
         width: 30%
     }
     
-    .logo {
-        width: 60%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
 
-    .dogImg {
-        object-fit: cover;
-        width: 50px;
-        height: 50px;
-        border-radius: 0px;
-    }
  </style>
 </head>
 
 <body style="background-color: #fdfbda;">
     <div class="topNavigationBar">
-      <nav class="navbar bg-custom sticky-top">
+      <nav class="navbar bg-custom sticky-top" style="padding: 0px;">
           <div class="container-fluid">
       
               <span class="brandN" onclick="getName()">
@@ -57,9 +45,9 @@
                   <img class="dogImg" src="/images/pawprint.png"> -->
               </span>
       
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <button class="navbar-toggler user_profile" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
               <!-- <span class="navbar-toggler-icon"></span> -->
-              <img class="dogProfile" src="/images/profile.png" class="d-inline-block align-top" alt="" onclick="getName()" >
+              <img class="user_profile_img" src="/images/profile.png" class="d-inline-block align-top" alt="" onclick="getName()" >
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
               <div class="offcanvas-header">

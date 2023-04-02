@@ -1,9 +1,26 @@
 .topNavigationBar {
     /* background-color: var(--primary--color); */
-    background-color: white;
-    
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    height: 55px;
 }
 
+
 .dogImg{
+    padding-top: 0;
+    margin: 0 0 5px 3px;
     width: 120%;
+    height: 46px;
 }
+
+.user_profile{
+    border-radius: 50px;
+}
+
+.user_profile_img {
+    width: 30px;
+    border-radius: 30px;
+}
+
+
+  
