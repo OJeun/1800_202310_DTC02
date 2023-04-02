@@ -55,12 +55,12 @@
             const listOfDogs = document.getElementById("dogsList");
             dogsArray.forEach(dog => {
               if (dog.profilePic == null) {
-                dog.profilePic = "https://easydrawingguides.com/wp-content/uploads/2018/09/Snoopy-10.png"
+                dog.profilePic = "./images/.jpeg"
               }
               console.log(dog.profilePic);
               listOfDogs.innerHTML += ` 
                                      <div class="card">
-                                      <img id="mypic-goes-here" src="${dog.profilePic}" alt="./images/blah.jpeg" width=50 height=50 />
+                                      <img id="mypic-goes-here" src="${dog.profilePic}" alt="./images/snoopy.jpeg" width=50 height=50 />
       <div class="card-body">
         <h5 class="card-title">${dog.name}</h5>
         <a href="#" class="btn btn-primary btn-custom" style="background-color: var(--third-color); color:rgb(248, 248, 248)" data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select this Dog</a>

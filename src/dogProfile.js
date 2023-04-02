@@ -1,5 +1,5 @@
-
-var ImageFile;      //global variable to store the File Object reference
+var ImageFile
+    //global variable to store the File Object reference
 
 function chooseFileListener() {
   const fileInput = document.getElementById("mypic-input");   // pointer #1
@@ -21,7 +21,7 @@ chooseFileListener();
 
 function addDog(event) {
   event.preventDefault()
-
+  const unique_id = Math.random().toString(36).substr(2, 9);
   
   const dogName = nameInput.value;
   const dogAge = ageInput.value;
@@ -31,7 +31,7 @@ function addDog(event) {
 
   user = firebase.auth().currentUser;
   console.log(user.uid)
-  var storageRef = storage.ref("images/" + user.uid + ".jpg");
+  var storageRef = storage.ref("images/" + user.uid + "/" + unique_id + ".jpg");
   var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
   storageRef.put(ImageFile).then(function () {
     storageRef.getDownloadURL()
