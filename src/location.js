@@ -14,15 +14,15 @@ const findMyLocation = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            document.getElementById("currentTMP").innerHTML = `${data.main.temp}℃`;
+            document.getElementById("currentTMP").innerHTML = `${Math.round(data.main.temp)}℃`;
             temp = data.main.temp
             console.log(temp)
-            if (temp < 5) {
-                document.getElementById("alerMSG").innerHTML = "Cold! Feel like Fridge!";
-            }else if(temp <15){
-                document.getElementById("alerMSG").innerHTML = "The weather is cool!";
-            }else if(temp <30){
-                document.getElementById("alerMSG").innerHTML = "Warm! Good to go!";
+            if (temp < 16) {
+                document.getElementById("alerMSG").innerHTML = "No heat stroke risk";
+            }else if(temp < 19){
+                document.getElementById("alerMSG").innerHTML = "Generally safe to exercise dogs at all times of day, although keep a close eye on large, obese and flat-faced breeds!";
+            }else if(temp <23){
+                document.getElementById("alerMSG").innerHTML = "Even at this temperature dogs are at risk of getting heat stroke if exercised too rigorously. Be careful!";
             }else{
                 document.getElementById("alerMSG").innerHTML = "Very Hot! Better to stay home!";}
 

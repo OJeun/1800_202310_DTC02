@@ -18,30 +18,52 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <script src="./src/firebaseAPI_TEAM02.js"></script>
-    <style>#temperature{color: #009578;}</style>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        #temperature {
+            color: #009578;
+        }
+    </style>
+    <style src="./src/css/temperature.css"></style>
 
 </head>
 
 <body>
     <nav id="navbarPlaceholder"></nav>
     <main>
+        <p class="main_start">What's weather today?</p>
+        <div id="icon"><img id="wicon" style="padding:0;" src="" alt="Weather icon"></div>
 
-        <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
-        <div class="alertMessage">
-            <p id="alerMSG"><b>TOO HOT!</b></p>
-        </div>
         <div class="tempBox">
+            <div class="alertMessage">
+                <p id="alerMSG"><b>TOO HOT!</b></p>
+            </div>
             <p class="showTemp currentTemp"> Current Temperature:&nbsp&nbsp<span id="currentTMP"></span></p>
-            <p class="showTemp idealTemp"> Ideal Temperature:&nbsp&nbsp<span class="idealTMP">21℃</span></p>
+            <p class="showTemp idealTemp"> Ideal Temperature:&nbsp&nbsp<span class="idealTMP">13℃</span></p>
         </div>
-        <p class="whatTime">Good time for a walk today</p>
+        <div class="advice">
+            <p class="advice_title" style="font-weight: 700">Advice</p>
+            <div class="whatTime">
+                <p class="period_walk">Best way to walk your dog over 23℃: <p>
+                <ul class="best_list">
+                    <li style="text-align:left">First thing in the morning or Later in the day</li>
+                    <li class="middle_best" style="text-align:left">Keep walks shorter than normal</li>
+                    <li style="text-align:left">Your dog needs to get out but not for too long</li>
+                </ul>
+            </div>
+
+        </div>
     </main>
 
-        
+
     <nav id="footerPlaceholder"></nav>
 
-        <script src="./src/skeleton.js"></script>
-        <script src="./src/location.js"></script>
+    <script src="./src/skeleton.js"></script>
+    <script src="./src/location.js"></script>
 </body>
 
 </html>
