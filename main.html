@@ -26,6 +26,12 @@
   <script src="./src/firebaseAPI_TEAM02.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="src/css/main.css">
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  
   <style>
     #homepage{color: #009578;}
   </style>
@@ -61,9 +67,9 @@
               listOfDogs.innerHTML += ` 
                                      <div class="card">
                                       <img id="mypic-goes-here" src="${dog.profilePic}" alt="./images/snoopy.jpeg" width=50 height=50 />
-      <div class="card-body">
+      <div class="card-body" style="padding: 4px">
         <h5 class="card-title">${dog.name}</h5>
-        <a href="#" class="btn btn-primary btn-custom" style="background-color: var(--third-color); color:rgb(248, 248, 248)" data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select this Dog</a>
+        <a href="#" class="btn btn-primary btn-custom" style="background-color: var(--third-color); color:rgb(248, 248, 248) " data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select</a>
       </div>
     </div>`;
             });
@@ -76,7 +82,7 @@
 
         if (localStorage.getItem("currentDogName") !== null) {
           console.log("you have a dog selected")
-          document.getElementById("currentDogSelected").innerHTML = "You are currently selected on dog: " + localStorage.getItem("currentDogName");
+          document.getElementById("currentDogSelected").innerHTML = "Selected Dog: " + localStorage.getItem("currentDogName");
         } else {
           console.log("current dog is null")
         }
@@ -111,11 +117,11 @@
 
   <main>
     <div class="container-fluid text-dark p-5 main-container-card">
-      <div class="container p-5 secondary-container-card">
+      <div class="secondary-container-card">
         <h1 class="display-4">
-          Welcome, <span id="name-goes-here"></span> 
-          <br><br> 
-          <span id="currentDogSelected">Please Select a
+          <span style="font-weight: 700; text-shadow: 2px 4px 3px rgb(0,0,0,0.3);">Welcome! <br></span><span id="name-goes-here" class="userName" style="font-weight: 700"></span> 
+          <br>
+          <span id="currentDogSelected" >Please Select a
             dog</span>
         </h1>
       </div>
@@ -125,8 +131,8 @@
       
     </div>
     <div class="addDogButton">
-      <a href="addDog.html" class="btn btn-primary btn-custom" style="color:rgb(248, 248, 248); width:80%;
-      border-radius: 50px; box-shadow: inset;">Add Your Dog</a>
+      <a href="addDog.html" class="btn btn-secondary" style="color:white; width:content; padding-top: 10px;
+      border-radius: 40px; box-shadow: inset;">+ Add Your Dog</a>
     </div>
   </main>
 

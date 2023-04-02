@@ -25,7 +25,8 @@ main {
 }
 
 .tempBox {
-    background-color: var(--fourth-color);
+    /* background-color: var(--fourth-color); */
+    color: black;
     border-radius: 30px;
     margin: 0 2%;
     padding: 3% 0 2% 0;
@@ -42,9 +43,19 @@ main {
     margin-bottom: 3px;
 }
 
+.advice{
+    margin-top: 30px;
+    margin-left: 8px;
+    padding: 2px;
+    width: 95%;
+    background-color: var(--third-color);
+    color: white;
+    border-radius: 30px;
+}
+
 .advice_title{
     font-size: larger;
-    padding-top: 9%;
+    padding-top: 4%;
     margin-bottom: 5px;
 }
 
