@@ -45,3 +45,11 @@
 #cancelButton {
     display: none;
 }
+
+#countdown{
+    padding: 3vh;
+    font-size: x-large;
+    border: 3px;
+    border-style: solid;
+
+}

@@ -14,22 +14,19 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <style>
-        #symptoms {
-            background-color: blue;
-            color: red;
-        }
-    </style>
+    <style>#symptom{color: #009578;}</style>
 </head>
 
 <body>
     <nav id="navbarPlaceholder"></nav>
 
     <div class="body">
-        <div class="title">
-            <h1> Your dog may have <span id="illness">illness</span></h1>
+        <div class="symptomContainer">
+            <div class="card" id="symptomResult">
+                <h1> Your dog may have <span id="illness">illness</span></h1>
+            </div>
         </div>
-        <div class="cards">
+        <div class="dangerContainer">
             <div class="danger">
                 <div class="card-body">
                     <h5 class="card-title">Dangers</h5>

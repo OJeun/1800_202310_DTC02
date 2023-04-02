@@ -22,13 +22,10 @@ chooseFileListener();
 function addDog(event) {
   event.preventDefault()
 
-  const dogTakeName = document.getElementById("nameInput");
+  
   const dogName = nameInput.value;
-  const dogTakeAge = document.getElementById("ageInput");
   const dogAge = ageInput.value;
-  const dogTakeBreed = document.getElementById("breedInput");
   const dogBreed = breedInput.value;
-  const dogTakeHair = document.getElementById("hairInput");
   const dogHair = hairInput.value;
 
 

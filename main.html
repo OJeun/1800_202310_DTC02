@@ -39,8 +39,10 @@
           dogsCollection.get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               // Access the fields in the document using the data() method
+              
               const dogData = doc.data();
               const dogId = doc.id;
+              console.log(dogData.profilePic);
               dogsArray.push({
                 id: dogId,
                 name: dogData.name,
@@ -52,9 +54,10 @@
             });
             const listOfDogs = document.getElementById("dogsList");
             dogsArray.forEach(dog => {
-            if (dog.profilePic == null) {
-              dog.profilePic = "https://easydrawingguides.com/wp-content/uploads/2018/09/Snoopy-10.png"
-            }  
+              if (dog.profilePic == null) {
+                dog.profilePic = "https://easydrawingguides.com/wp-content/uploads/2018/09/Snoopy-10.png"
+              }
+              console.log(dog.profilePic);
               listOfDogs.innerHTML += ` 
                                      <div class="card">
                                       <img id="mypic-goes-here" src="${dog.profilePic}" alt="./images/blah.jpeg" width=50 height=50 />
@@ -67,7 +70,7 @@
           }).catch(error => {
             console.log("Error getting dogs collection:", error);
           });
-          console.log(dogsArray);
+          console.log(dogsArrkay);
         }
 
 

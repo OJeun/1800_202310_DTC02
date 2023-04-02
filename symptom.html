@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/colors.css">
     <link rel="stylesheet" href="./src/css/symptom.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -19,52 +21,59 @@
 
 <body>
     <nav id="navbarPlaceholder"></nav>
-
-    <div class="symptom_body">
-        <div class="title">
-            <h1> Does Your Dog Exhibit Any of These Symptoms?</h1>
+    <div class="symptomContainer">
+        <div class="card" id="symptomGuide">
+            <h1>Symptom Tracker</h1>
+            <p>During hot weather your dog is susceptible to heat related dangers and illnesses.</p>
+            <p>If your dog is displaying heat-related symptoms, log the symptoms and press submit to see possible causes</p>
         </div>
-        <div class="checklist">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="vomiting">
-                <label class="form-check-label" for="vomiting">
-                    Vomiting
-                </label>
+    </div>
+    <div class="symptomLoggerContainer">
+        <div class="card" id="symptomLogger">
+            <div class="title">
+                <h2> Does Your Dog Exhibit Any of These Symptoms?</h2>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="muscle_spasms">
-                <label class="form-check-label" for="muscle_spasms">
-                    Muscle Spasms
-                </label>
+            <div class="checklist">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="vomiting">
+                    <label class="form-check-label" for="vomiting">
+                        Vomiting
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="muscle_spasms">
+                    <label class="form-check-label" for="muscle_spasms">
+                        Muscle Spasms
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="dizziness">
+                    <label class="form-check-label" for="dizziness">
+                        Dizziness
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="fatigue">
+                    <label class="form-check-label" for="fatigue">
+                        Fatigue
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="diarrhea">
+                    <label class="form-check-label" for="diarrhea">
+                        Diarrhea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="skin_elasticity">
+                    <label class="form-check-label" for="skin_elasticity">
+                        Loss of Skin Elasticity
+                    </label>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="dizziness">
-                <label class="form-check-label" for="dizziness">
-                    Dizziness
-                </label>
+            <div class="button">
+                <button id="save" type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="fatigue">
-                <label class="form-check-label" for="fatigue">
-                    Fatigue
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="diarrhea">
-                <label class="form-check-label" for="diarrhea">
-                    Diarrhea
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="skin_elasticity">
-                <label class="form-check-label" for="skin_elasticity">
-                    Loss of Skin Elasticity
-                </label>
-            </div>
-        </div>
-
-        <div class="button">
-            <button id="save" type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
         </div>
     </div>
 
