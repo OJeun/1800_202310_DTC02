@@ -81,48 +81,55 @@ function addDog(event) {
       });
   }
 }
+const urlParams = new URLSearchParams(window.location.search);
+const dogId = urlParams.get('id');
+console.log(dogId);
 
-
-function populateInfo() {
+function populateInfo(dogId) {
   firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-      // go and get the curret user info from firestore
-      currentUser = db.collection("users").doc(user.uid).collection("dogs").doc(dog.uid);
+      if (user) {
+        // go and get the curret user info from firestore
+        currentUser = db.collection("users").doc(user.uid).collection("dogs").doc(dogId);
+        console.log(currentUser)
 
-      currentUser.get()
-        .then(userDoc => {
-          // let userName = userDoc.data().name;
-          // let userSchool = userDoc.data().school;
-          // let userCity = userDoc.data().city;
-          let picUrl = userDoc.data().profilePic;
-          console.log(picUrl)
+        currentUser.get()
+          .then(userDoc => {
+            let dogBreed = userDoc.data().breed;
+            console.log(dogBreed)
+            let dogName = userDoc.data().name;
+            console.log(dogName)
+            let dogAge = userDoc.data().age;
+            let dogHair = userDoc.data().hair;
+            let picUrl = userDoc.data().profilePic;
+            // console.log(picUrl)
 
-          // if (userName != null) {
-          //     document.getElementById("nameInput").value = userName;
-          // }
-          // if (userSchool != null) {
-          //     document.getElementById("schoolInput").value = userSchool;
-          // }
-          // if (userCity != null) {
-          //     console.log(userCity)
-          //     document.getElementById("cityInput").value = userCity;
-          // }
-          if (picUrl != null) {
-            console.log(picUrl);
-            // use this line if "mypicdiv" is a "div"
-            //$("#mypicdiv").append("<img src='" + picUrl + "'>")
-            $("#mypic-goes-here").attr("src", picUrl);
-          }
-          else
-            console.log("picURL is null");
-        })
+            if (dogBreed != null) {
+              document.getElementById("breedInput").value = dogBreed;
+            }
+            if (dogAge != null) {
+              document.getElementById("ageInput").value = dogAge;
+            }
+            if (dogName != null) {
+              document.getElementById("nameInput").value = dogName;
+            }
+            if (dogHair != null) {
+              document.getElementById("hairInput").value = dogHair;
+            }
+            if (picUrl != null) {
+              console.log(picUrl);
+              // use this line if "mypicdiv" is a "div"
+              //$("#mypicdiv").append("<img src='" + picUrl + "'>")
+              $("#mypic-goes-here").attr("src", picUrl);
+            } else
+              console.log("picURL is null");
+          })
 
-    } else {
-      console.log("no user is logged in")
+      } else {
+        console.log("no user is logged in")
+      }
     }
-  }
 
   )
 
 }
-populateInfo();
+populateInfo(dogId);

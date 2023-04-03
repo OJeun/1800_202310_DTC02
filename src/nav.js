@@ -177,7 +177,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         var option = document.createElement("option");
         option.text = doc.data().name;
         option.onclick = function() {
-          var url = "addDog.html"
+          var url = "addDog.html?id=" + encodeURIComponent(doc.id);
           window.location.href = url;
         }
         dropdown.appendChild(option);
