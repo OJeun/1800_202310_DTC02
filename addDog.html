@@ -21,7 +21,77 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <script src="./src/firebaseAPI_TEAM02.js"></script>
   <link rel="stylesheet" href="./src/css/hydration.css">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    #button2 {
+      margin: 0px !important;
+    }
+
+    #dogInfoFields {
+      margin-bottom: 0px !important;
+    }
+
+    main {
+      background-color: var(--primary--color);
+      height: 100vh;
+    }
+
+    /* h1 {
+      text-align: center;
+      padding-top: 20px !important;
+      padding-bottom: 30px !important;
+    } */
+
+    * {
+      font-family: "Quicksand";
+      overflow: hidden;
+    }
+
+    .dogInfo {
+      padding: 5vh;
+      padding-top: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin: 20px auto 5vh auto;
+      background-color: white;
+      border-radius: 5%;
+      box-shadow: 5px 5px 5px grey;
+      padding-right: 3px;
+      padding-left: 3px;
+      font-size: medium;
+      width: 90%;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      margin: auto auto auto auto;
+      justify-content: center;
+      padding: 10px 0 10px 0;
+    }
+
+    label {
+      flex-basis: 30%;
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      padding-left: 40px !important;
+    }
+
+    .btn {
+      align-items: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -36,7 +106,7 @@
       <form id="dogProfileForm">
         <fieldset class="mb-3" id="dogInfoFields">
           <div class="form-group">
-            <label class="forText" for="breed-input">Search for a dog breed:</label>
+            <label class="forText" for="breed-input">Dog breed:</label>
             <input type="text" id="breedInput">
           </div>
 
@@ -49,22 +119,22 @@
             <input type="text" id="ageInput">
           </div>
           <div class="form-group">
-            <label>Length of hair :</label>
+            <label>Hair length :</label>
             <input type="text" id="hairInput" placeholder="short/ medium / long">
 
           </div>
 
           <!-- For upload the imgaes -->
           <div class="container text-center py-3">
-            <img id="mypic-goes-here" src="images/blah.jpeg" width=50 height=50 />
+            <img id="mypic-goes-here" src="images/blah.jpeg" width=60 height=60 style="margin-right: 5px;" />
             <input type="file" onclick="chooseFileListener()" id="mypic-input" accept="image/*" />
           </div>
 
         </fieldset>
-        <div class="d-flex justify-content-end mt-5">
-          <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
-          <span style="width: 10px"></span>
-          <button type="submit" class="btn btn-info" onclick="addDog(event);saveUserInfo()" id="saveButton">Save</button>
+        <div class="d-flex justify-content-center mt-5" id="button2">
+          <button type="submit" class="btn btn-primary"
+            style="border-radius: 20px; background-color: #609966; margin-right: 20px;"
+            onclick="addDog(event);saveUserInfo()" id="saveButton">Save</button>
         </div>
       </form>
     </div>
