@@ -15,6 +15,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <style>#symptom{color: #009578;}</style>
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,20 +26,20 @@
 
     <div class="body">
         <div class="symptomResultContainer">
-            <div class="card" id="symptomResult">
-                <h1> Your dog may have <span id="illness">illness</span></h1>
-            </div>
+            <!-- <div class="card" id="symptomResult"> -->
+                <h1> Your dog may have <br><span id="illness" style="color: red; font-weight: 700;">illness</span></h1>
+            <!-- </div> -->
         </div>
         <div class="dangerContainer">
             <div class="danger">
                 <div class="card-body">
-                    <h5 class="card-title">Dangers</h5>
+                    <h5 class="card-title" style="font-weight: 700;">Dangers</h5>
                     <ul id="danger"></ul>
                 </div>
             </div>
             <div class="recommendations">
                 <div class="card-body">
-                    <h5 class="card-title">Recommendations</h5>
+                    <h5 class="card-title" style="font-weight: 700; text-align: center;">Recommendations</h5>
                     <ul id="remedy"></ul>
                 </div>
             </div>

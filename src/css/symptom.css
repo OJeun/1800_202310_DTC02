@@ -1,10 +1,12 @@
+* {
+    font-family: "Quicksand";
+}
+
 #symptomGuide{
     padding: 3vh;
     border-radius: 5%;
     background-color: var(--third-color);
     box-shadow: 5px 5px 5px grey;
-    font-family: 'Roboto', sans-serif;
-    font-size: medium;
     text-shadow: 2px 4px 3px rgb(0,0,0,0.3);
     color: rgb(248, 248, 248);
 }
@@ -14,10 +16,10 @@
     border-radius: 5%;
     background-color: var(--danger-color);
     box-shadow: 5px 5px 5px grey;
-    font-family: 'Roboto', sans-serif;
     font-size: medium;
     text-shadow: 2px 4px 3px rgb(0,0,0,0.3);
     color: rgb(248, 248, 248);
+    text-align: center;
 }
 .danger {
     margin-top: -10vh;
@@ -26,14 +28,17 @@
     border-radius: 5%;
     background-color: var(--danger-color);
     box-shadow: 5px 5px 5px grey;
-    font-family: 'Roboto', sans-serif;
     font-size: medium;
     text-shadow: 2px 4px 3px rgb(0,0,0,0.3);
     color: rgb(248, 248, 248);
 }
 
+#illness{
+    line-height: 2;
+}
+
 .symptomContainer {
-    padding: 3vh;
+    padding: 7vh 3vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -44,8 +49,21 @@
 
 }
 
+.symptomContainer h1{
+    padding-bottom: 1rem;
+    margin-top: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.symptomContainer p{
+    font-weight: 400;
+    padding:0 3px;
+    text-align: left;
+}
+
 .symptomResultContainer {
-    padding: 7vh;
+    padding: 4vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -57,7 +75,8 @@
 }
 
 .symptomLoggerContainer{
-    padding: 3vh;
+    padding: 2.5vh;
+    padding-top: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -65,11 +84,10 @@
     align-items: center;
     align-content: center;
     margin-bottom: 5vh;
-    background-color: var(--fourth-color);
+    background-color: var(--primary--color);
 }
 
 .dangerContainer {
-    padding: 0vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -78,30 +96,63 @@
     align-content: center;
     margin-bottom: 5vh;
     background-color: var(--fourth-color);
-    height: 65vh;
+    height: 80vh;
+}
+
+.danger {
+    margin-top: 1.2rem;
+    width: 72%;
+}
+
+#danger {
+    line-height: 1.6;
+}
+
+.remedy {
+    margin-top: 1.2rem;
+    width: 72%;
+}
+
+#remedy {
+    padding-top: 1rem;
+    line-height: 1.6;
+}
+
+.danger .card-title {
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
 #symptomLogger{
     padding: 5vh;
+    padding-bottom: 4vh;
+    padding-right: 3px;
     border-radius: 5%;
     box-shadow: 5px 5px 5px grey;
-    font-family: 'Roboto', sans-serif;
     font-size: medium;
+}
+
+.checklist {
+    margin: 1rem 0;
 }
 
 .recommendations{
     width: 70%;
     margin-top: 5vh;
     padding: 3vh;
+    padding-bottom: 2vh;
     border-radius: 5%;
     background-color: var(--third-color);
     box-shadow: 5px 5px 5px grey;
-    font-family: 'Roboto', sans-serif;
     font-size: medium;
     text-shadow: 2px 4px 3px rgb(0,0,0,0.3);
     color: rgb(248, 248, 248);
 }
 
-.body {
-    height: 100%;
+#save{
+    margin: 0 30%;
+    border-radius: 20px;
+    background-color: #609966;
+    color: white;
 }
+
