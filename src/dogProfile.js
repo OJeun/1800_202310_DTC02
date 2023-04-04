@@ -1,4 +1,7 @@
 var ImageFile;
+window.addEventListener("load", function () {
+  document.querySelector(".loader").classList.add("loader--hidden");
+});
 
 //global variable to store the File Object reference
 function chooseFileListener() {
@@ -19,9 +22,10 @@ function chooseFileListener() {
 chooseFileListener();
 
 function addDog(event) {
+  document.querySelector(".loader").classList.add("loader--hidden");
   event.preventDefault();
   const unique_id = Math.random().toString(36).substr(2, 9);
-
+  document.querySelector(".loader").classList.remove("loader--hidden");
   const dogName = nameInput.value;
   const dogAge = ageInput.value;
   const dogBreed = breedInput.value;
