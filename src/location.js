@@ -31,6 +31,7 @@ const findMyLocation = () => {
             var iconcode = data.weather[0].icon;
             var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
             $('#wicon').attr('src', iconurl);
+            document.querySelector(".loader").classList.add("loader--hidden");
         })
     }
 
@@ -39,6 +40,7 @@ const findMyLocation = () => {
     }
 
     navigator.geolocation.getCurrentPosition(success, error);
+    
 
 }
 
