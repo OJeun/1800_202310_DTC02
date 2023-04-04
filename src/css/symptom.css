@@ -87,6 +87,10 @@
     background-color: var(--primary--color);
 }
 
+.title{
+    margin-right: 1rem;
+}
+
 .dangerContainer {
     display: flex;
     flex-direction: row;
@@ -136,6 +140,8 @@
     margin: 1rem 0;
 }
 
+
+
 .recommendations{
     width: 70%;
     margin-top: 5vh;
@@ -155,4 +161,3 @@
     background-color: #609966;
     color: white;
 }
-
