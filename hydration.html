@@ -32,13 +32,12 @@
         <div class="hydrationBody">
           <div class="card text-card" id="texty">
               <h1 style="font-weight: bold;">DRINK WATER</h1>
-              <br>
               <span id = "waterReminder">It is recommended for your dog to drink water every hours</span>
               <script>
                 waterReminderText= document.getElementById("waterReminder");
                 dogWaterName = localStorage.getItem("currentDogName");
                 if (dogWaterName == null) {
-                  waterReminderText.innerHTML = "You Don't Have a Dog Selected! Go back to main page and select a dog"
+                  waterReminderText.innerHTML = "Any dog not selected yet! <br> Please select a dog on the info"
                   document.getElementById("texty").style.backgroundColor = "var(--danger-color)";
                 } else {
                   waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
@@ -133,8 +132,8 @@
             <div>
               <p id="countdown" style="display: none;"></p>
             </div>
-              <div class="button" id="submitButton"><button type="button" class="btn btn-primary" onclick="timer()">Submit!</button></div>
-              <div class="button" id="cancelButton"><button type="button" class="btn btn-danger" onclick="cancelTimer()">Cancel!</button></div>
+              <div class="button" id="submitButton"><button type="button" class="btn btn-primary" style="border-radius: 20px; background-color: #609966; margin-top: 2rem;" onclick="timer()">Submit</button></div>
+              <div class="button" id="cancelButton"><button type="button" class="btn btn-danger" onclick="cancelTimer()">Cancel</button></div>
             
         </div>
     </main>
