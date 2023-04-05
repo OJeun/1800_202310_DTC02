@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,21 +31,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  
+
   <style>
-    #homepage{color: #009578;}
+    #homepage {
+      color: #009578;
+    }
   </style>
- 
+
   <script>
     window.onload = async function () {
       console.log("window on load successful");
       await firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-          var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
+          var dogsCollection = db.collection("users").doc(user.uid).collection("dogs").orderBy('name')g;
           dogsCollection.get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               // Access the fields in the document using the data() method
-              
+
               const dogData = doc.data();
               const dogId = doc.id;
               console.log(dogData.profilePic);
@@ -119,21 +121,22 @@
     <div class="container-fluid text-dark p-5 main-container-card">
       <div class="secondary-container-card">
         <h1 class="display-4">
-          <span style="font-weight: 700; text-shadow: 2px 4px 3px rgb(0,0,0,0.3);">Welcome! <br></span><span id="name-goes-here" class="userName" style="font-weight: 700"></span> 
+          <span style="font-weight: 700; text-shadow: 2px 4px 3px rgb(0,0,0,0.3);">Welcome! <br></span><span
+            id="name-goes-here" class="userName" style="font-weight: 700"></span>
           <br>
-          <span id="currentDogSelected" >Please Select a
+          <span id="currentDogSelected">Please Select a
             dog</span>
         </h1>
       </div>
     </div>
-    
+
     <div id="dogsList">
-      
+
     </div>
     <div class="addDogButton">
       <a href="addDog.html" class="btn btn-secondary" style="color:white; width:content; padding-top: 10px;
       border-radius: 40px; box-shadow: inset;">+ Add Your Dog</a>
-          <p style="font-size: xx-small; margin: 48% 0 0 0;">@copyright 2023 Hoda and her 1800 3 children</p>
+      <p style="font-size: xx-small; margin: 48% 0 0 0;">@copyright 2023 Hoda and her 1800 3 children</p>
     </div>
 
 
