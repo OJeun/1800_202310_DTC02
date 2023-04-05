@@ -8,24 +8,7 @@ var cancelButton;
 var countdown;
 var endTime;
 
-function timer() {
-
-    var currentDogId = localStorage.getItem("currentDogId");
-    if (currentDogId == null) {
-        console.log("hours and minutes is empty")
-        let warning = document.createElement('span');
-        warning.textContent = "YOU MUST SELECT A DOG FIRST";
-        warning.style.color = "red";
-        var caption = document.getElementById('caption');
-
-        while(caption.firstChild) {
-            caption.removeChild(caption.firstChild);
-        }
-
-        caption.appendChild(warning);
-        return false;
-    }
-    console.log("hello world");
+function timerCheck() {
     // Get the current dog ID
     var currentDogId = localStorage.getItem("currentDogId");
     // Use the current dog ID to create unique keys for the countdown end time and timer ID
@@ -88,6 +71,90 @@ function timer() {
         caption.appendChild(warning);
         return false;
     }
+
+    timer();
+        // If a countdown end time is stored, use it instead of
+}
+function timer() {
+
+    // var currentDogId = localStorage.getItem("currentDogId");
+    // if (currentDogId == null) {
+    //     console.log("hours and minutes is empty")
+    //     let warning = document.createElement('span');
+    //     warning.textContent = "YOU MUST SELECT A DOG FIRST";
+    //     warning.style.color = "red";
+    //     var caption = document.getElementById('caption');
+
+    //     while(caption.firstChild) {
+    //         caption.removeChild(caption.firstChild);
+    //     }
+
+    //     caption.appendChild(warning);
+    //     return false;
+    // }
+    console.log("hello world");
+    // Get the current dog ID
+    var currentDogId = localStorage.getItem("currentDogId");
+    // Use the current dog ID to create unique keys for the countdown end time and timer ID
+    var countdownEndTimeKey = "countdownEndTime_" + currentDogId;
+    var timerIdKey = "timerId_" + currentDogId;
+
+    reminderCard = document.getElementById("reminder");
+    activeButton = document.getElementById("submitButton");
+    cancelButton = document.getElementById("cancelButton");
+    countdown = document.getElementById("countdown");
+    var hours = document.getElementById("hours");
+    var hoursValue = parseInt(hours.value);
+
+    var minutes = document.getElementById("minutes");
+    var minutesValue = parseInt(minutes.value);
+    
+    //Warns user they cannot proceed if both fields are empty
+    // if (isNaN(hoursValue) && isNaN(minutesValue)) {
+    //     console.log("hours and minutes is empty")
+    //     let warning = document.createElement('span');
+    //     warning.textContent = "both time fields cannot be empty";
+    //     warning.style.color = "red";
+    //     var caption = document.getElementById('caption');
+
+    //     while(caption.firstChild) {
+    //         caption.removeChild(caption.firstChild);
+    //     }
+
+    //     caption.appendChild(warning);
+    //     return false;
+    // }
+    // //Warns user they cannot proceed if minutes field is empty
+    // if (isNaN(minutesValue)) {
+    //     console.log("minutes is empty")
+    //     let warning = document.createElement('span');
+    //     warning.textContent = "minutes field cannot be empty";
+    //     warning.style.color = "red";
+    //     var caption = document.getElementById('caption');
+
+    //     while(caption.firstChild) {
+    //         caption.removeChild(caption.firstChild);
+    //     }
+
+    //     caption.appendChild(warning);
+    //     return false;
+    // } 
+    
+    // //Warns user they cannot proceed if hours field is empty
+    // if (isNaN(hoursValue)) {
+    //     console.log("hours is empty")
+    //     let warning = document.createElement('span');
+    //     warning.textContent = "hours field cannot be empty";
+    //     warning.style.color = "red";
+    //     var caption = document.getElementById('caption');
+
+    //     while(caption.firstChild) {
+    //         caption.removeChild(caption.firstChild);
+    //     }
+
+    //     caption.appendChild(warning);
+    //     return false;
+    // }
 
 
     var timeInMilliSeconds = hoursValue * 3600 * 1000 + minutesValue * 60 * 1000;
