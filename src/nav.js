@@ -164,25 +164,28 @@ window.onclick = function (event) {
 //     });
 //   }
 
-firebase.auth().onAuthStateChanged(function (user) {
-  currentUser = db.collection("users").doc(user.uid).collection("dogs");
-  var dropdown = document.getElementById("dropdown-menu");
-  currentUser.get().then((querySnapshot) => {
-    if (querySnapshot.size === 0) {
-      var defaultOption = document.createElement("option");
-      defaultOption.text = "No dogs added";
-      dropdown.appendChild(defaultOption);
-    } else {
-      querySnapshot.forEach((doc) => {
-        var option = document.createElement("option");
-        option.text = doc.data().name;
-        option.onclick = function() {
-          var url = "addDog.html?id=" + encodeURIComponent(doc.id);
-          window.location.href = url;
-        }
-        dropdown.appendChild(option);
-      });
-    }
+function display_dogs() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    currentUser = db.collection("users").doc(user.uid).collection("dogs");
+    var dropdown = document.getElementById("dropdown-menu");
+    currentUser.get().then((querySnapshot) => {
+      if (querySnapshot.size === 0) {
+        var defaultOption = document.createElement("option");
+        defaultOption.text = "No dogs added";
+        dropdown.appendChild(defaultOption);
+      } else {
+        querySnapshot.forEach((doc) => {
+          var option = document.createElement("option");
+          option.text = doc.data().name;
+          option.onclick = function () {
+            var url = "addDog.html?id=" + encodeURIComponent(doc.id);
+            window.location.href = url;
+          }
+          dropdown.appendChild(option);
+        });
+      }
+    });
   });
-});
+}
 
+display_dogs();
