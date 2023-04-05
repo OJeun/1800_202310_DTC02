@@ -129,7 +129,7 @@
         .then(response => response.json())
         .then(data => {
           const breeds = data.message;
-          const select = document.getElementById('breed-select');
+          const select = document.getElementById('breedInput');
 
           Object.keys(breeds).forEach(breedName => {
             const option = document.createElement('option');
@@ -146,6 +146,7 @@
         .catch(error => {
           console.error('Error fetching dog breeds', error);
         });
+      
     </script>
 
     <div class="loader"></div>
@@ -156,7 +157,7 @@
           <div class="form-group">
             <label class="forText" for="breed-input">Dog breed:</label>
             <!-- <input type="text" id="breed-select"> -->
-            <select name="" id="breed-select"></select>
+            <select name="" id="breedInput"></select>
           </div>
 
           <div class="form-group">
@@ -169,8 +170,12 @@
           </div>
           <div class="form-group">
             <label>Hair length :</label>
-            <input type="text" id="hairInput" placeholder="short/ medium / long">
-
+            <select name="" id="hairInput" placeholder ="short/medium/long">
+            <option value="">Select a hair length</option>
+              <option value="short">Short</option>
+            <option value="medium">Medium</option>
+            <option value="long">Long</option>
+          </select> 
           </div>
 
           <!-- For upload the imgaes -->
