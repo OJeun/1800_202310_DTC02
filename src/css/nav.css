@@ -5,12 +5,16 @@
     height: 55px;
 }
 
+.brandN{
+    width: 30%;
+    height: 55px;
+}
 
 .dogImg{
     padding-top: 0;
-    margin: 0 0 5px 3px;
-    width: 120%;
-    height: 46px;
+    margin: 0 0 5px 0;
+    width: 80%;
+    height: 99%;
 }
 
 .user_profile{
