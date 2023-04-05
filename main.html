@@ -43,7 +43,7 @@
       console.log("window on load successful");
       await firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-          var dogsCollection = db.collection("users").doc(user.uid).collection("dogs").orderBy('name')g;
+          var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
           dogsCollection.get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               // Access the fields in the document using the data() method
