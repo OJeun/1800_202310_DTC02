@@ -1,3 +1,7 @@
+const urlParams = new URLSearchParams(window.location.search);
+const dogId = urlParams.get('id');
+console.log(dogId);
+
 var ImageFile;
 window.addEventListener("load", function () {
   document.querySelector(".loader").classList.add("loader--hidden");
@@ -21,73 +25,79 @@ function chooseFileListener() {
 }
 chooseFileListener();
 
+const unique_id = Math.random().toString(36).substr(2, 9);
+
 function addDog(event) {
-  document.querySelector(".loader").classList.add("loader--hidden");
   event.preventDefault();
-  const unique_id = Math.random().toString(36).substr(2, 9);
   document.querySelector(".loader").classList.remove("loader--hidden");
+
+  const user = firebase.auth().currentUser;
+  const dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
+
+  const dogObject = createDogObject();
+  const dogId = urlParams.get('id');
+
+  if (ImageFile) {
+    uploadDogImage(ImageFile, user.uid, dogId)
+      .then((url) => {
+        dogObject.profilePic = url;
+        saveDog(dogObject, dogId, dogsCollection);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Error occurred during image upload.");
+      });
+  } else {
+    saveDog(dogObject, dogId, dogsCollection);
+  }
+}
+
+function createDogObject() {
   const dogName = nameInput.value;
   const dogAge = ageInput.value;
   const dogBreed = breedInput.value;
   const dogHair = hairInput.value;
 
-  user = firebase.auth().currentUser;
-  console.log(user.uid);
-  var storageRef = storage.ref(
-    "images/" + user.uid + "/" + unique_id + ".jpg"
-  );
-  var dogsCollection = db
-    .collection("users")
-    .doc(user.uid)
-    .collection("dogs");
-  if (ImageFile) {
-    storageRef
-      .put(ImageFile)
-      .then(function () {
-        storageRef.getDownloadURL().then(function (url) {
-          // Get "url" of the uploaded file
-          console.log("Got the download URL.");
-          dogsCollection
-            .add({
-              name: dogName,
-              age: dogAge,
-              hair: dogHair,
-              breed: dogBreed,
-              profilePic: url,
-            })
-            .then(function () {
-              console.log("Hi");
-              document.getElementById("dogProfileForm").submit();
-              alert("Dog added successfully!");
-              window.location.href = "main.html";
-              // document.getElementById('personalInfoFields').disabled = true;
-            });
-        });
+  return {
+    name: dogName,
+    age: dogAge,
+    hair: dogHair,
+    breed: dogBreed,
+  };
+}
+
+function uploadDogImage(ImageFile, userId, dogId) {
+  const storageRef = storage.ref(`images/${userId}/${dogId || unique_id}.jpg`);
+  return storageRef.put(ImageFile)
+    .then(() => {
+      return storageRef.getDownloadURL();
+    });
+}
+
+function saveDog(dogObject, dogId, dogsCollection) {
+  if (dogId) {
+    dogsCollection.doc(dogId).update(dogObject)
+      .then(() => {
+        alert("Dog updated successfully!");
+        window.location.href = "main.html";
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
-        alert("Error occurred during image upload.");
+        alert("Error occurred during dog update.");
       });
   } else {
-    dogsCollection
-      .add({
-        name: dogName,
-        age: dogAge,
-        hair: dogHair,
-        breed: dogBreed,
-        profilePic: null,
-      })
-      .then(function () {
-        console.log("Hi");
-        document.getElementById("dogProfileForm").submit();
+    dogsCollection.add(dogObject)
+      .then(() => {
         alert("Dog added successfully!");
         window.location.href = "main.html";
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Error occurred during dog creation.");
       });
   }
 }
-const urlParams = new URLSearchParams(window.location.search);
-const dogId = urlParams.get('id');
-console.log(dogId);
+
 
 function populateInfo(dogId) {
   firebase.auth().onAuthStateChanged(user => {
