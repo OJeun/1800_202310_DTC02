@@ -1,3 +1,6 @@
+// Execute on window load, retrieves user's dogs data from Firestore and populates the dogs list on the page, 
+// also checks if user has a dog selected and displays it, and displays a message to prompt user to add a dog if no dogs are found.
+
 window.onload = async function () {
   console.log("window on load successful");
   await firebase.auth().onAuthStateChanged(function (user) {

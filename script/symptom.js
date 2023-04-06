@@ -1,4 +1,4 @@
-
+//This function saves the user's selected symptoms to their profile in the database.
 var currentUser;
 
 function saveUserInfo() {

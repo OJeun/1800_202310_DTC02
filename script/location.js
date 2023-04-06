@@ -1,3 +1,4 @@
+// This function finds the current location of the user and fetches the current temperature and weather information using the OpenWeatherMap AP
 const findMyLocation = () => {
 
     const success = (position) => {

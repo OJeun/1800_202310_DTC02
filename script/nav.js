@@ -2,6 +2,8 @@ function loginFunc() {
   window.location.href = "login.html"
 }
 
+
+// This function retrieves the dog data from the database and populates an array with it
 var dogsArray = []
 function getName() {
   var user = firebase.auth().currentUser;
@@ -52,6 +54,8 @@ var formModal = document.getElementById("formModal");
 var showFormLink = document.getElementById("showFormLink");
 var closeBtn = document.getElementsByClassName("close")[0];
 
+
+// This function displays a modal form for updating the user's profile information, pre-populating the form fields with the user's current information from the database.
 showFormLink.onclick = function () {
   var user = firebase.auth().currentUser;
   formModal.style.display = "block";
@@ -66,7 +70,7 @@ showFormLink.onclick = function () {
 }
 
 
-
+//Update the user's profile information (name, email, and school) in both Firebase Authentication and Cloud Firestore, and redirects the user to the main page after a successful update.
 updateProfileForm.addEventListener('submit', (e) => {
   e.preventDefault();
 

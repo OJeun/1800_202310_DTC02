@@ -27,6 +27,7 @@ chooseFileListener();
 
 const unique_id = Math.random().toString(36).substr(2, 9);
 
+// Function to handle adding a new dog to the database
 function addDog(event) {
   event.preventDefault();
   document.querySelector(".loader").classList.remove("loader--hidden");
@@ -52,6 +53,7 @@ function addDog(event) {
   }
 }
 
+// Function to create a dog object from the form inputs
 function createDogObject() {
   const dogName = nameInput.value;
   const dogAge = ageInput.value;
@@ -66,6 +68,9 @@ function createDogObject() {
   };
 }
 
+
+// Function to upload a dog image to Firebase storage
+// Returns a promise that resolves to the download URL for the uploaded image
 function uploadDogImage(ImageFile, userId, dogId) {
   const storageRef = storage.ref(`images/${userId}/${dogId || unique_id}.jpg`);
   return storageRef.put(ImageFile)
@@ -74,6 +79,7 @@ function uploadDogImage(ImageFile, userId, dogId) {
     });
 }
 
+// This function saves or updates dog information in the Firebase Firestore database.
 function saveDog(dogObject, dogId, dogsCollection) {
   if (dogId) {
     dogsCollection.doc(dogId).update(dogObject)
@@ -98,7 +104,7 @@ function saveDog(dogObject, dogId, dogsCollection) {
   }
 }
 
-
+//This function populates the dog information in the form for editing
 function populateInfo(dogId) {
   firebase.auth().onAuthStateChanged(user => {
       if (user) {
