@@ -1,6 +1,7 @@
 * {
     font-family: "Quicksand";
 }
+
 .hydrationBody {
     background-color: var(--primary--color);
     font-family: 'Roboto', sans-serif;
@@ -13,7 +14,7 @@
     height: 570px;
 }
 
-#waterReminder{
+#waterReminder {
     font-weight: 90px;
     padding: 0;
 }
@@ -26,7 +27,7 @@
 
     box-shadow: 5px 5px 5px grey;
     /* font-size: x-large; */
-    text-shadow: 2px 4px 3px rgb(0,0,0,0.3);
+    text-shadow: 2px 4px 3px rgb(0, 0, 0, 0.3);
     color: rgb(248, 248, 248);
     margin-top: 2vh;
     margin-bottom: 7vh;
@@ -53,11 +54,12 @@
     padding: 1rem;
     flex-grow: 1;
 }
+
 #cancelButton {
     display: none;
 }
 
-#countdown{
+#countdown {
     padding: 3vh;
     font-size: x-large;
     border: 3px;

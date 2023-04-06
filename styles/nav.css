@@ -1,44 +1,41 @@
 .dogProfile {
-    width: 50px;
-    height: 50px;
-  }
+  width: 50px;
+  height: 50px;
+}
 
-  .row {
-    display: flex;
-    flex-direction: row;
-  }
+.row {
+  display: flex;
+  flex-direction: row;
+}
 
-  .profile {
-    width: 30%
-  }
+.profile {
+  width: 30%
+}
 
 .topNavigationBar {
-    /* background-color: var(--primary--color); */
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
-    height: 55px;
+  /* background-color: var(--primary--color); */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  height: 55px;
 }
 
-.brandN{
-    width: 30%;
-    height: 55px;
+.brandN {
+  width: 30%;
+  height: 55px;
 }
 
-.dogImg{
-    padding-top: 0;
-    margin: 0 0 5px 0;
-    width: 80%;
-    height: 99%;
+.dogImg {
+  padding-top: 0;
+  margin: 0 0 5px 0;
+  width: 80%;
+  height: 99%;
 }
 
-.user_profile{
-    border-radius: 50px;
+.user_profile {
+  border-radius: 50px;
 }
 
 .user_profile_img {
-    width: 30px;
-    border-radius: 30px;
+  width: 30px;
+  border-radius: 30px;
 }
-
-
-  

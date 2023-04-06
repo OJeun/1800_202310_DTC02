@@ -1,27 +1,27 @@
-waterReminderText= document.getElementById("waterReminder");
-                dogWaterName = localStorage.getItem("currentDogName");
-                if (dogWaterName == null) {
-                  waterReminderText.innerHTML = "Any dog not selected yet! <br> Please select a dog on the info"
-                  document.getElementById("texty").style.backgroundColor = "var(--danger-color)";
-                } else {
-                  waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
-                }
-                // waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
+waterReminderText = document.getElementById("waterReminder");
+dogWaterName = localStorage.getItem("currentDogName");
+if (dogWaterName == null) {
+    waterReminderText.innerHTML = "Any dog not selected yet! <br> Please select a dog on the info"
+    document.getElementById("texty").style.backgroundColor = "var(--danger-color)";
+} else {
+    waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
+}
+// waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
 
 const hoursSelect = document.getElementById('hours');
-      const minutesSelect = document.getElementById('minutes');
-      const caption = document.getElementById('caption');
-  
-      hoursSelect.addEventListener('change', updateCaption);
-      minutesSelect.addEventListener('change', updateCaption);
-  
-      function updateCaption() {
-          const hours = parseInt(hoursSelect.value);
-          const minutes = parseInt(minutesSelect.value);
-          if (!isNaN(hours) && !isNaN(minutes)) {
-              caption.textContent = `${hours} hours ${minutes} minutes`;
-          }
-      }
+const minutesSelect = document.getElementById('minutes');
+const caption = document.getElementById('caption');
+
+hoursSelect.addEventListener('change', updateCaption);
+minutesSelect.addEventListener('change', updateCaption);
+
+function updateCaption() {
+    const hours = parseInt(hoursSelect.value);
+    const minutes = parseInt(minutesSelect.value);
+    if (!isNaN(hours) && !isNaN(minutes)) {
+        caption.textContent = `${hours} hours ${minutes} minutes`;
+    }
+}
 
 var timerID;
 var hoursRemaining;
@@ -49,7 +49,7 @@ function timerCheck() {
 
     var minutes = document.getElementById("minutes");
     var minutesValue = parseInt(minutes.value);
-    
+
     //Warns user they cannot proceed if both fields are empty
     if (isNaN(hoursValue) && isNaN(minutesValue)) {
         console.log("hours and minutes is empty")
@@ -58,7 +58,7 @@ function timerCheck() {
         warning.style.color = "red";
         var caption = document.getElementById('caption');
 
-        while(caption.firstChild) {
+        while (caption.firstChild) {
             caption.removeChild(caption.firstChild);
         }
 
@@ -73,14 +73,14 @@ function timerCheck() {
         warning.style.color = "red";
         var caption = document.getElementById('caption');
 
-        while(caption.firstChild) {
+        while (caption.firstChild) {
             caption.removeChild(caption.firstChild);
         }
 
         caption.appendChild(warning);
         return false;
-    } 
-    
+    }
+
     //Warns user they cannot proceed if hours field is empty
     if (isNaN(hoursValue)) {
         console.log("hours is empty")
@@ -89,7 +89,7 @@ function timerCheck() {
         warning.style.color = "red";
         var caption = document.getElementById('caption');
 
-        while(caption.firstChild) {
+        while (caption.firstChild) {
             caption.removeChild(caption.firstChild);
         }
 
@@ -98,25 +98,10 @@ function timerCheck() {
     }
 
     timer();
-        // If a countdown end time is stored, use it instead of
+    // If a countdown end time is stored, use it instead of
 }
 function timer() {
 
-    // var currentDogId = localStorage.getItem("currentDogId");
-    // if (currentDogId == null) {
-    //     console.log("hours and minutes is empty")
-    //     let warning = document.createElement('span');
-    //     warning.textContent = "YOU MUST SELECT A DOG FIRST";
-    //     warning.style.color = "red";
-    //     var caption = document.getElementById('caption');
-
-    //     while(caption.firstChild) {
-    //         caption.removeChild(caption.firstChild);
-    //     }
-
-    //     caption.appendChild(warning);
-    //     return false;
-    // }
     console.log("hello world");
     // Get the current dog ID
     var currentDogId = localStorage.getItem("currentDogId");
@@ -133,53 +118,7 @@ function timer() {
 
     var minutes = document.getElementById("minutes");
     var minutesValue = parseInt(minutes.value);
-    
-    //Warns user they cannot proceed if both fields are empty
-    // if (isNaN(hoursValue) && isNaN(minutesValue)) {
-    //     console.log("hours and minutes is empty")
-    //     let warning = document.createElement('span');
-    //     warning.textContent = "both time fields cannot be empty";
-    //     warning.style.color = "red";
-    //     var caption = document.getElementById('caption');
 
-    //     while(caption.firstChild) {
-    //         caption.removeChild(caption.firstChild);
-    //     }
-
-    //     caption.appendChild(warning);
-    //     return false;
-    // }
-    // //Warns user they cannot proceed if minutes field is empty
-    // if (isNaN(minutesValue)) {
-    //     console.log("minutes is empty")
-    //     let warning = document.createElement('span');
-    //     warning.textContent = "minutes field cannot be empty";
-    //     warning.style.color = "red";
-    //     var caption = document.getElementById('caption');
-
-    //     while(caption.firstChild) {
-    //         caption.removeChild(caption.firstChild);
-    //     }
-
-    //     caption.appendChild(warning);
-    //     return false;
-    // } 
-    
-    // //Warns user they cannot proceed if hours field is empty
-    // if (isNaN(hoursValue)) {
-    //     console.log("hours is empty")
-    //     let warning = document.createElement('span');
-    //     warning.textContent = "hours field cannot be empty";
-    //     warning.style.color = "red";
-    //     var caption = document.getElementById('caption');
-
-    //     while(caption.firstChild) {
-    //         caption.removeChild(caption.firstChild);
-    //     }
-
-    //     caption.appendChild(warning);
-    //     return false;
-    // }
 
 
     var timeInMilliSeconds = hoursValue * 3600 * 1000 + minutesValue * 60 * 1000;
@@ -224,7 +163,7 @@ function timer() {
     localStorage.setItem(timerIdKey, timerId);
 }
 
-window.onload = function() {
+window.onload = function () {
     // Get the current dog ID
     var currentDogId = localStorage.getItem("currentDogId");
     // Use the current dog ID to create unique keys for the countdown end time and timer ID

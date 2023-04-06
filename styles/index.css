@@ -2,11 +2,13 @@
     text-align: center;
     font-family: 'Sen'
 }
+
 /* Navbar */
 
 .brandN {
     font-size: 120%;
 }
+
 .d-inline-block {
     width: 30px;
     height: 30px;
@@ -15,12 +17,13 @@
 
 .dogProfile {
     width: 200px;
-    
+
 }
 
 .navbar {
     width: 100%;
 }
+
 .signup {
     line-height: 1;
 }
@@ -36,24 +39,24 @@
     text-decoration: solid;
 }
 
-.brandName{
+.brandName {
     font-size: x-large;
     font-weight: bold;
 }
 
-.dogImg{
+.dogImg {
     width: 1.3rem;
 }
 
 /* Main Part */
 
-.container{
+.container {
     margin: 0;
     width: 100%;
 }
 
 
-.mainDog{
+.mainDog {
     width: 100%;
     background-color: #cccccc;
     height: 740px;
@@ -71,17 +74,17 @@
     padding-top: 9%;
 }
 
-.slogan{
+.slogan {
     color: white;
     font-size: 20px;
     margin-right: 38%;
 }
 
-.start_btn{
+.start_btn {
     margin-right: 39%;
 }
 
-.dogMain{
+.dogMain {
     width: 100%;
     height: 100%;
 }
@@ -98,7 +101,7 @@
 }
 
 
-.info{
+.info {
     width: 100px;
 }
 
@@ -108,9 +111,9 @@
         font-family: "Montserrat";
     }
 
-  
-    .mainDog{
-        margin-bottom: 35px;        
+
+    .mainDog {
+        margin-bottom: 35px;
         background-color: #cccccc;
         height: 360px;
         background-position: center;
@@ -118,7 +121,6 @@
         background-size: cover;
         position: relative;
         background-image: url(https://www.adamspetcare.com/-/media/Project/OneWeb/Adams/Images/Photos/Blog/Article/how-do-dogs-get-heartworm.jpg)
-
     }
 
     .logo {
@@ -126,7 +128,7 @@
         padding-top: 80px;
         margin-bottom: 5px;
     }
-    
+
     .start_btn {
         padding: 5px;
         font-size: x-small;
@@ -136,7 +138,7 @@
         font-family: 'Kalam';
         font-size: small;
         margin-bottom: px;
-        
+
     }
 
 
@@ -144,32 +146,32 @@
         font-size: 24px;
         font-family: 'Playball';
     }
-    
+
     .aim {
         font-family: 'Dosis', sans-serif;
         font-size: 15px;
         margin-bottom: 2px;
     }
 
-    .features{
+    .features {
         margin-top: 20px;
     }
 
-    .introSecond{
+    .introSecond {
         font-size: 0;
     }
 
-    .info_card{
+    .info_card {
         font-size: 10px;
         padding: 0;
         margin-top: 20px;
     }
 
-    h2{
+    h2 {
         color: white;
     }
 
-    .cardImg{
+    .cardImg {
         margin: 0 auto;
         width: 110%;
     }
@@ -178,17 +180,17 @@
         padding-top: 23px;
     }
 
-    .symptom_img{
+    .symptom_img {
         padding-top: 20%;
         width: 87%;
     }
 
-    .panting_img{
+    .panting_img {
         padding-top: 20%;
         width: 77%;
     }
 
-    .temperature{
+    .temperature {
         padding-top: 23px;
     }
 
