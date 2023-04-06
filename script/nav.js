@@ -1,3 +1,7 @@
+function loginFunc() {
+  window.location.href = "login.html"
+}
+
 var dogsArray = []
 // user = firebase.auth().currentUser;
 // var dogsCollection = db.collection("users").doc(user.uid).collection("dogs")
@@ -189,3 +193,14 @@ function display_dogs() {
 }
 
 display_dogs();
+
+document.getElementById("offcanvasNavbarLabel").textContent = localStorage.getItem("username");
+
+document.querySelector('.dogProfile').addEventListener('click', function () {
+  const navList = document.getElementById('nav-list');
+  if (navList.style.display === 'none') {
+    navList.style.display = 'block';
+  } else {
+    navList.style.display = 'none';
+  }
+});

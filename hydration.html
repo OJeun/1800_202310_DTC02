@@ -5,25 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./src/css/colors.css">
-    <link rel="stylesheet" href="./src/css/hydration.css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="src/hydration.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <script src="./src/firebaseAPI_TEAM02.js"></script>
-    <script src="./src/switchDog.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./src/css/colors.css">
+    <link rel="stylesheet" href="styles/hydration.css">
+
+
     <style> #hydration {color: #009578;}</style>
       <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <nav id="navbarPlaceholder"></nav>
@@ -33,17 +37,6 @@
           <div class="card text-card" id="texty">
               <h1 style="font-weight: bold;">DRINK WATER</h1>
               <span id = "waterReminder">It is recommended for your dog to drink water every hours</span>
-              <script>
-                waterReminderText= document.getElementById("waterReminder");
-                dogWaterName = localStorage.getItem("currentDogName");
-                if (dogWaterName == null) {
-                  waterReminderText.innerHTML = "Any dog not selected yet! <br> Please select a dog on the info"
-                  document.getElementById("texty").style.backgroundColor = "var(--danger-color)";
-                } else {
-                  waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
-                }
-                // waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
-              </script>
           </div>
           <div class="card" id="reminder" style="width: 18rem;">
               <div class="card-body">
@@ -140,22 +133,10 @@
     
     <nav id="footerPlaceholder"></nav>
 
-    <script src="./src/skeleton.js"></script>
-    <script>
-      const hoursSelect = document.getElementById('hours');
-      const minutesSelect = document.getElementById('minutes');
-      const caption = document.getElementById('caption');
-  
-      hoursSelect.addEventListener('change', updateCaption);
-      minutesSelect.addEventListener('change', updateCaption);
-  
-      function updateCaption() {
-          const hours = parseInt(hoursSelect.value);
-          const minutes = parseInt(minutesSelect.value);
-          if (!isNaN(hours) && !isNaN(minutes)) {
-              caption.textContent = `${hours} hours ${minutes} minutes`;
-          }
-      }
-  </script>
+    <script src="script/skeleton.js"></script>
+    <script src="script/hydration.js"></script>
+    <script src="./src/firebaseAPI_TEAM02.js"></script>
+    <script src="script/switchDog.js"></script>
+    
 </body>
 </html>

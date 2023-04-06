@@ -1,3 +1,17 @@
+.dogProfile {
+    width: 50px;
+    height: 50px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .profile {
+    width: 30%
+  }
+
 .topNavigationBar {
     /* background-color: var(--primary--color); */
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);

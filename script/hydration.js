@@ -1,3 +1,28 @@
+waterReminderText= document.getElementById("waterReminder");
+                dogWaterName = localStorage.getItem("currentDogName");
+                if (dogWaterName == null) {
+                  waterReminderText.innerHTML = "Any dog not selected yet! <br> Please select a dog on the info"
+                  document.getElementById("texty").style.backgroundColor = "var(--danger-color)";
+                } else {
+                  waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
+                }
+                // waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
+
+const hoursSelect = document.getElementById('hours');
+      const minutesSelect = document.getElementById('minutes');
+      const caption = document.getElementById('caption');
+  
+      hoursSelect.addEventListener('change', updateCaption);
+      minutesSelect.addEventListener('change', updateCaption);
+  
+      function updateCaption() {
+          const hours = parseInt(hoursSelect.value);
+          const minutes = parseInt(minutesSelect.value);
+          if (!isNaN(hours) && !isNaN(minutes)) {
+              caption.textContent = `${hours} hours ${minutes} minutes`;
+          }
+      }
+
 var timerID;
 var hoursRemaining;
 var minutesRemaining;

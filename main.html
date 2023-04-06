@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -24,93 +24,15 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <script src="./src/firebaseAPI_TEAM02.js"></script>
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="src/css/main.css">
 
-  <!-- google font -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="styles/main.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
-  <style>
-    #homepage {
-      color: #009578;
-    }
-  </style>
 
-  <script>
-    window.onload = async function () {
-      console.log("window on load successful");
-      await firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
-          dogsCollection.get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              // Access the fields in the document using the data() method
-
-              const dogData = doc.data();
-              const dogId = doc.id;
-              console.log(dogData.profilePic);
-              dogsArray.push({
-                id: dogId,
-                name: dogData.name,
-                age: dogData.age,
-                breed: dogData.breed,
-                profilePic: dogData.profilePic
-              });
-
-            });
-            const listOfDogs = document.getElementById("dogsList");
-            dogsArray.forEach(dog => {
-              if (!dog.profilePic) {
-                dog.profilePic = "https://easydrawingguides.com/wp-content/uploads/2018/09/Snoopy-10.png"
-              }
-              console.log(dog.profilePic);
-              listOfDogs.innerHTML += ` 
-                                     <div class="card">
-                                      <img id="mypic-goes-here" src="${dog.profilePic}" alt="./images/snoopy.jpeg" width=50 height=50 />
-      <div class="card-body" style="padding: 4px">
-        <h5 class="card-title">${dog.name}</h5>
-        <a href="#" class="btn btn-primary btn-custom" style="background-color: var(--third-color); color:rgb(248, 248, 248) " data-dog-id="${dog.id}" data-dog-name ="${dog.name}" onclick = "switchDog()">Select</a>
-      </div>
-    </div>`;
-            });
-          }).catch(error => {
-            console.log("Error getting dogs collection:", error);
-          });
-          console.log(dogsArray);
-        }
-
-
-        if (localStorage.getItem("currentDogName") !== null) {
-          console.log("you have a dog selected")
-          document.getElementById("currentDogSelected").innerHTML = "Selected Dog: " + localStorage.getItem("currentDogName");
-        } else {
-          console.log("current dog is null")
-        }
-
-        var dogsCollection = db.collection("users").doc(user.uid).collection("dogs");
-        var noDogs;
-        dogsCollection.get().then(querySnapshot => {
-          if (querySnapshot.empty) {
-            console.log("You have dogs");
-            document.getElementById("currentDogSelected").innerHTML = "Get Started by adding a dog";
-          }
-        }).catch(error => {
-          console.log("Error getting document:", error);
-        });
-
-
-
-
-      });
-
-
-
-
-    };
-
-  </script>
 
 </head>
 
@@ -128,17 +50,15 @@
         </h1>
       </div>
     </div>
-
+    
     <div id="dogsList">
-
+      
     </div>
     <div class="addDogButton">
       <a href="addDog.html" class="btn btn-secondary" style="color:white; width:content; padding-top: 10px;
       border-radius: 40px; box-shadow: inset;">+ Add Your Dog</a>
       <p style="font-size: xx-small; margin: 48% 0 0 0;">@copyright 2023 Hoda and her 1800 3 children</p>
     </div>
-
-
 
   </main>
 
@@ -150,10 +70,11 @@
 
   <nav id="footerPlaceholder"></nav>
 
-  <script src="./src/skeleton.js"></script>
-  <script src="./src/main.js"></script>
-  <script src="./src/switchDog.js"></script>
-  <script src="./src/dogProfile.js"></script>
+  <script src="script/skeleton.js"></script>
+  <script src="script/main.js"></script>
+  <script src="script/switchDog.js"></script>
+  <script src="script/dogProfile.js"></script>
+
 
 </body>
 

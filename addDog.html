@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./src/css/addDog.css">
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,134 +20,24 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <script src="./src/firebaseAPI_TEAM02.js"></script>
-  <link rel="stylesheet" href="./src/css/hydration.css">
-  <style>
-    .loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #333333;
-    }
-    .loader--hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .loader::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      border-color: #fff transparent #fff transparent;
-      animation: loader 1.2s linear infinite;
-    }
 
-    @keyframes loader {
-      from {transform: rotate(0turn) }
-      to {transform: rotate(1turn)}
-    }
-  </style>
+  <!-- css -->
+  <link rel="stylesheet" href="styles/addDog.css">
+
+  <!-- google font -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    #button2 {
-      margin: 0px !important;
-    }
 
-    #dogInfoFields {
-      margin-bottom: 0px !important;
-    }
-
-    main {
-      background-color: var(--primary--color);
-      height: 100vh;
-    }
-
-    * {
-      font-family: "Quicksand";
-      overflow: hidden;
-    }
-
-    .dogInfo {
-      padding: 5vh;
-      padding-top: 0;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      margin: 20px auto 5vh auto;
-      background-color: white;
-      border-radius: 5%;
-      box-shadow: 5px 5px 5px grey;
-      padding-right: 3px;
-      padding-left: 3px;
-      font-size: medium;
-      width: 90%;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: row;
-      margin: auto auto auto auto;
-      justify-content: center;
-      padding: 10px 0 10px 0;
-    }
-
-    label {
-      flex-basis: 30%;
-      text-align: right;
-      padding-right: 10px;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: row;
-      padding-left: 40px !important;
-    }
-
-    .btn {
-      align-items: center;
-    }
-  </style>
 </head>
 
 <body>
-  <nav id="navbarPlaceholder"></nav>
+
 
   <main>
-    <script>
-      fetch('https://dog.ceo/api/breeds/list/all')
-        .then(response => response.json())
-        .then(data => {
-          const breeds = data.message;
-          const select = document.getElementById('breedInput');
+    <nav id="navbarPlaceholder"></nav>
 
-          Object.keys(breeds).forEach(breedName => {
-            const option = document.createElement('option');
-            option.value = breedName;
-            option.textContent = breedName;
-            select.appendChild(option);
-          });
-
-          select.addEventListener('change', event => {
-            const selectedBreed = event.target.value;
-            // Do something with the selected breed
-          });
-        })
-        .catch(error => {
-          console.error('Error fetching dog breeds', error);
-        });
-      
-    </script>
 
     <div class="loader"></div>
     <div class="dogInfo">
@@ -170,12 +60,12 @@
           </div>
           <div class="form-group">
             <label>Hair length :</label>
-            <select name="" id="hairInput" placeholder ="short/medium/long">
-            <option value="">Select a hair length</option>
+            <select name="" id="hairInput" placeholder="short/medium/long">
+              <option value="">Select a hair length</option>
               <option value="short">Short</option>
-            <option value="medium">Medium</option>
-            <option value="long">Long</option>
-          </select> 
+              <option value="medium">Medium</option>
+              <option value="long">Long</option>
+            </select>
           </div>
 
           <!-- For upload the imgaes -->
@@ -199,10 +89,10 @@
   <nav id="footerPlaceholder"></nav>
 
   <script src="./src/firebaseAPI_TEAM02.js"></script>
-  <script src="./src/skeleton.js"></script>
-  <script src="./src/dogProfile.js"></script>
-  <script src="./src/main.js"></script>
-  <!-- <script src="./src/profile.js"></script> -->
+  <script src="script/skeleton.js"></script>
+  <script src="script/dogProfile.js"></script>
+  <script src="script/main.js"></script>
+
 
 
 

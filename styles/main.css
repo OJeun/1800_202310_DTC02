@@ -2,6 +2,8 @@
     font-family: "Quicksand";
 }
 
+#homepage{color: #009578;}
+
 .main-container-card {
     background-color: var(--primary--color);
     
