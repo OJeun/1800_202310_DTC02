@@ -1,2 +1,6 @@
 node_modules/
 .firebaseAPI_TEAM02.js
+.DS_Store
+*.logs
+.vscode/
+

@@ -50,18 +50,79 @@ Content of the project folder:
 
 ```
  Top level of project folder: 
-├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── .firebase               # All firebase files
+└── functions               # json files and gitfile
+└── images                  # All imgages used in hotdog
+└── script                  # All javascript files
+└── src                     # API file
+└── styles                  # All css files
+└── text                    # top and bottom navbar
 
 It has the following subfolders and files:
-├── .git                     # Folder for git repo
+├── .firebase               # Files for firebase
+    /firebaseerc
+    /database.rules.json
+    /firebase.json
+    /firestore.indexes.js
+    /firebase.rules
+    /hosting.cache
+    /storage.rules
+├── functions                # gitignore and json files
+    /.gitignore
+    /package.json
+    /settings.json
 ├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
-├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
+    /blah.jpeg                 
+    /drinking.jpeg
+    /logo.png
+    /mainDogimg.jpeg
+    /Nahra.jpeg
+    /panting_dog,png
+    /profile.png
+    /snoopy.jpeg
+    /symptom_dog.jpeg
+    /waiting_dog.gif
+├── script                   # Folder for javascript files
+    /authentification.js
+    /dogProfile.js
+    /hydration.js
+    /index.js
+    /location.js
+    /main.js
+    /nav.js
+    /skeleton.js
+    /switchDog.js
+    /symptom.js
+    /symptom2.js
+├── src                   # Folder for firebaseAPI
+    /firebaseAPI_TEAM02
+├── styles                # Folder for css files
+    /addDog.css
+    /colors.css
+    /footer.css
+    /hydration.css
+    /index.css
+    /main.css
+    /nav.css
+    /symptoms.css
+    /temperature.css
+├── text             # Folder for top and bottom nav bar
+    /nav.html
+    /footer.html
+/404.html
+/addDog.html
+/dogProfile.html
+/hydration.html
+/index.html
+/login.html
+/main.html
+/README.md
+/symptom.html
+/symptom2.html
+/temperature.html
+/userProfile.html
+
+
 
 
 
