@@ -2,6 +2,7 @@
 function getSelectedSymptoms() {
   var symptoms = [];
   var vomiting = document.getElementById('vomiting');
+  // If the symptom is checked, then we add it to the symptoms array
   if (vomiting.checked) {
     symptoms.push("vomiting");
   }

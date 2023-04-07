@@ -81,6 +81,7 @@ function uploadDogImage(ImageFile, userId, dogId) {
 
 // This function saves or updates dog information in the Firebase Firestore database.
 function saveDog(dogObject, dogId, dogsCollection) {
+  // If the dogId is not null, then we are updating an existing dog
   if (dogId) {
     dogsCollection.doc(dogId).update(dogObject)
       .then(() => {
@@ -91,6 +92,7 @@ function saveDog(dogObject, dogId, dogsCollection) {
         console.log(error);
         alert("Error occurred during dog update.");
       });
+  // If the dogId is null, then we are adding a new dog
   } else {
     dogsCollection.add(dogObject)
       .then(() => {
@@ -132,6 +134,7 @@ function updateInputs(dogData) {
   const nameInput = document.getElementById("nameInput");
   const hairInput = document.getElementById("hairInput");
   
+  // If the dog data is not null, then we update the input value
   if (dogData.breed != null) {
     breedInput.value = dogData.breed;
   }
@@ -150,6 +153,7 @@ function updateInputs(dogData) {
 function updateProfilePic(picUrl) {
   const profilePic = $("#mypic-goes-here");
   
+  // If the picture is not null, then we update the profile picture for the dog
   if (picUrl != null) {
     profilePic.attr("src", picUrl);
   } else {

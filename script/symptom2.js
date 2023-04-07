@@ -57,6 +57,7 @@ function displayIllnessInfo(ID) {
     console.log(dangers);
     console.log(remedies);
 
+    // Populate the HTML page with the dangers data from Firestore
     document.getElementById("illness").innerHTML = illnessInfo.id;
     dangers.forEach(danger => {
       const bulletPoint = document.createElement("li");
@@ -64,6 +65,7 @@ function displayIllnessInfo(ID) {
       $("#danger").append(bulletPoint);
     });
 
+    // Populate the HTML page with the remedies data from Firestore
     remedies.forEach(remedy => {
       const bulletPoint2 = document.createElement("li");
       bulletPoint2.textContent = remedy;

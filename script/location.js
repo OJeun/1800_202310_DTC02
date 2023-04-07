@@ -28,8 +28,6 @@ const findMyLocation = () => {
                     document.getElementById("alerMSG").innerHTML = "Very Hot! Better to stay home!";
                 }
 
-
-
                 var iconcode = data.weather[0].icon;
                 var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
                 $('#wicon').attr('src', iconurl);
