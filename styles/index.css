@@ -49,6 +49,11 @@
 }
 
 /* Main Part */
+.aim {
+    font-family: 'Dosis', sans-serif;
+    font-size: 40px;
+    margin-bottom: 1px;
+}
 
 .container {
     margin: 0;
@@ -68,16 +73,23 @@
 }
 
 .logo {
+    font-family: "Montserrat";
     color: white;
     font-size: 95px;
-    margin-right: 38%;
-    padding-top: 9%;
+    margin-right: 35%;
 }
 
 .slogan {
+    font-family: 'Kalam';
+    font-size: xx-large;
     color: white;
-    font-size: 20px;
-    margin-right: 38%;
+    margin-right: 35%;
+}
+
+
+.dog_matter {
+    font-size: 49px;
+    font-family: 'Playball';
 }
 
 .start_btn {
@@ -89,6 +101,19 @@
     height: 100%;
 }
 
+.symptom_img {
+    padding-top: 20%;
+    width: 87%;
+}
+
+.panting_img {
+    padding-top: 20%;
+    width: 77%;
+}
+
+.temperature {
+    padding-top: 23px;
+}
 
 /* Main part 2 */
 

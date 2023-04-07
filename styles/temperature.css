@@ -61,7 +61,7 @@ main {
 }
 
 #alerMSG {
-    font-size: 20px;
+    font-size: 40px;
     margin-bottom: 1px;
 
 }
@@ -77,7 +77,7 @@ main {
 
 .showTemp {
     margin-bottom: 1px;
-    font-size: 14px;
+    font-size: 28px;
 }
 
 .temp_info {
@@ -87,9 +87,9 @@ main {
 
 .advice {
     margin-top: 30px;
-    margin-left: 8px;
+    margin-left: 15%;
     padding: 2px;
-    width: 95%;
+    width: 65%;
     background-color: var(--third-color);
     color: white;
     border-radius: 30px;
@@ -102,7 +102,7 @@ main {
 }
 
 .whatTime {
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .alert_23 {
