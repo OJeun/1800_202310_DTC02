@@ -44,6 +44,7 @@
     flex-direction: row;
     position: relative;
 }
+  
 
 #reminder {
     padding: 1rem;
@@ -53,6 +54,27 @@
 .card text-card {
     padding: 1rem;
     flex-grow: 1;
+}
+
+@media screen and (min-width: 550px) {
+    .card {
+        width: 300px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #reminder {
+        width: 300px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main {
+        height: 100vh;
+        background-color: var(--primary--color);
+    }
 }
 
 #cancelButton {

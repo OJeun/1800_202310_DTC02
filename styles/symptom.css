@@ -50,6 +50,25 @@
 
 }
 
+@media screen and (min-width: 550px) {
+    .card {
+        width: 370px;
+    }
+
+    .danger {
+        width: 370px !important;
+    }
+
+    .recommendations {
+        width: 370px !important;
+    }
+
+    .dangerContainer {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
 .symptomContainer h1 {
     padding-bottom: 1rem;
     margin-top: 0;

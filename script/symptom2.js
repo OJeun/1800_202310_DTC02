@@ -48,16 +48,16 @@ function getIllness(symptoms) {
 // This function retrieves the heat illness data from the Firestore database
 function displayIllnessInfo(ID) {
   db.collection("Heat Illnesses").doc(ID).get().then(illness => {
-    hikeInfo = illness.data();
-    hikeInfo.id = illness.id;
-    console.log(hikeInfo);
+    illnessInfo = illness.data();
+    illnessInfo.id = illness.id;
+    console.log(illnessInfo);
 
-    dangers = hikeInfo.Dangers;
-    remedies = hikeInfo.Remedies;
+    dangers = illnessInfo.Dangers;
+    remedies = illnessInfo.Remedies;
     console.log(dangers);
     console.log(remedies);
 
-    document.getElementById("illness").innerHTML = hikeInfo.id;
+    document.getElementById("illness").innerHTML = illnessInfo.id;
     dangers.forEach(danger => {
       const bulletPoint = document.createElement("li");
       bulletPoint.textContent = danger;
