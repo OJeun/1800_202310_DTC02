@@ -107,49 +107,54 @@ function saveDog(dogObject, dogId, dogsCollection) {
 //This function populates the dog information in the form for editing
 function populateInfo(dogId) {
   firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        // go and get the curret user info from firestore
-        currentUser = db.collection("users").doc(user.uid).collection("dogs").doc(dogId);
-        console.log(currentUser)
-
-        currentUser.get()
-          .then(userDoc => {
-            let dogBreed = userDoc.data().breed;
-            console.log(dogBreed)
-            let dogName = userDoc.data().name;
-            console.log(dogName)
-            let dogAge = userDoc.data().age;
-            let dogHair = userDoc.data().hair;
-            let picUrl = userDoc.data().profilePic;
-            // console.log(picUrl)
-
-            if (dogBreed != null) {
-              document.getElementById("breedInput").value = dogBreed;
-            }
-            if (dogAge != null) {
-              document.getElementById("ageInput").value = dogAge;
-            }
-            if (dogName != null) {
-              document.getElementById("nameInput").value = dogName;
-            }
-            if (dogHair != null) {
-              document.getElementById("hairInput").value = dogHair;
-            }
-            if (picUrl != null) {
-              console.log(picUrl);
-              // use this line if "mypicdiv" is a "div"
-              //$("#mypicdiv").append("<img src='" + picUrl + "'>")
-              $("#mypic-goes-here").attr("src", picUrl);
-            } else
-              console.log("picURL is null");
-          })
-
-      } else {
-        console.log("no user is logged in")
-      }
+    if (user) {
+      getUserDogData(user.uid, dogId)
+        .then(dogData => {
+          updateInputs(dogData);
+          updateProfilePic(dogData.profilePic);
+        });
+    } else {
+      console.log("no user is logged in")
     }
-
-  )
-
+  });
 }
+
+// This function gets the dog data from the database
+function getUserDogData(userId, dogId) {
+  return db.collection("users").doc(userId).collection("dogs").doc(dogId).get()
+    .then(doc => doc.data());
+}
+
+// This function updates the form inputs with the dog data
+function updateInputs(dogData) {
+  const breedInput = document.getElementById("breedInput");
+  const ageInput = document.getElementById("ageInput");
+  const nameInput = document.getElementById("nameInput");
+  const hairInput = document.getElementById("hairInput");
+  
+  if (dogData.breed != null) {
+    breedInput.value = dogData.breed;
+  }
+  if (dogData.age != null) {
+    ageInput.value = dogData.age;
+  }
+  if (dogData.name != null) {
+    nameInput.value = dogData.name;
+  }
+  if (dogData.hair != null) {
+    hairInput.value = dogData.hair;
+  }
+}
+
+// This function updates the profile picture with the dog data
+function updateProfilePic(picUrl) {
+  const profilePic = $("#mypic-goes-here");
+  
+  if (picUrl != null) {
+    profilePic.attr("src", picUrl);
+  } else {
+    console.log("picURL is null");
+  }
+}
+
 populateInfo(dogId);
