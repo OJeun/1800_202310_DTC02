@@ -13,11 +13,15 @@ List team members and/or short bio's here...
 
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
-* HTML, CSS, JavaScript
+* HTML 5, CSS, JavaScript
 * Bootstrap 5.0 (Frontend library)
-* Firebase 8.0 (BAAS - Backend as a Service)
+* Firebase 8.0 (BAAS - Backend as a Service) - authentication, database, and storage
 * OpenWeatherMap API
 * Dog.ceo
+* Google fonts
+* Google material icons
+* Homemade logo!
+* Google jquery library
 
 
 ## 4. Complete setup/installion/usage
@@ -39,7 +43,7 @@ Here are some known bugs:
 What we'd like to build in the future:
 * E-mail reminders for the hydration reminder
 * Map to show closest vet clinics in the user's area
-* Asphalt temperature
+* Calculate asphalt temperature
 	
 ## 7. Contents of Folder
 Content of the project folder:
