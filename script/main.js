@@ -9,7 +9,6 @@ window.onload = async function () {
       dogsCollection.get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           // Access the fields in the document using the data() method
-
           const dogData = doc.data();
           const dogId = doc.id;
           console.log(dogData.profilePic);
@@ -61,15 +60,7 @@ window.onload = async function () {
     }).catch(error => {
       console.log("Error getting document:", error);
     });
-
-
-
-
   });
-
-
-
-
 };
 
 $(document).ready(function () {
@@ -120,8 +111,7 @@ function insertNameFromFirestore() {
     console.log(user_Name);
     localStorage.setItem("username", user_Name);
     document.getElementById("offcanvasNavbarLabel").textContent = user_Name;
-    $("#name-goes-here").text(user_Name); //jquery
-    // document.getElementByID("name-goes-here").innetText=user_Name;
+    $("#name-goes-here").text(user_Name);
   })
 }
 insertNameFromFirestore

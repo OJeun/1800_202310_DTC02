@@ -116,13 +116,13 @@ window.onclick = function (event) {
   }
 }
 
-
-
+// This function displays the dog's name alphabetically in the navbar
 function display_dogs() {
   firebase.auth().onAuthStateChanged(function (user) {
     currentUser = db.collection("users").doc(user.uid).collection("dogs");
     var dropdown = document.getElementById("dropdown-menu");
-    currentUser.get().then((querySnapshot) => {
+    // gets the dogs from the database and adds them to the dropdown menu
+    currentUser.orderBy("name").get().then((querySnapshot) => {
       if (querySnapshot.size === 0) {
         var defaultOption = document.createElement("option");
         defaultOption.text = "No dogs added";
@@ -146,6 +146,7 @@ display_dogs();
 
 document.getElementById("offcanvasNavbarLabel").textContent = localStorage.getItem("username");
 
+// This adds a loading spinner to the page if there is loading times
 document.querySelector('.dogProfile').addEventListener('click', function () {
   const navList = document.getElementById('nav-list');
   if (navList.style.display === 'none') {

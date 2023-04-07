@@ -75,6 +75,7 @@
     height: max-content;
     background-color: var(--fourth-color);
     padding-bottom: 3vh;
+    height: fit-content !important;
 }
 
 @media screen and (min-width: 500px) {

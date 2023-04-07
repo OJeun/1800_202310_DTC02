@@ -6,7 +6,6 @@ if (dogWaterName == null) {
 } else {
     waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
 }
-// waterReminderText.innerHTML = `It is recommended for ${dogWaterName} to drink water every few hours`
 
 const hoursSelect = document.getElementById('hours');
 const minutesSelect = document.getElementById('minutes');
@@ -33,6 +32,7 @@ var cancelButton;
 var countdown;
 var endTime;
 
+// This function checks if the user has entered a value in both the hours and minutes fields
 function timerCheck() {
     // Get the current dog ID
     var currentDogId = localStorage.getItem("currentDogId");
@@ -50,58 +50,72 @@ function timerCheck() {
     var minutes = document.getElementById("minutes");
     var minutesValue = parseInt(minutes.value);
 
-    //Warns user they cannot proceed if both fields are empty
-    if (isNaN(hoursValue) && isNaN(minutesValue)) {
-        console.log("hours and minutes is empty")
-        let warning = document.createElement('span');
-        warning.textContent = "both time fields cannot be empty";
-        warning.style.color = "red";
-        var caption = document.getElementById('caption');
-
-        while (caption.firstChild) {
-            caption.removeChild(caption.firstChild);
-        }
-
-        caption.appendChild(warning);
+    // Call individual functions to check for errors
+    if (!checkBothFieldsFilled(hoursValue, minutesValue)) {
         return false;
     }
-    //Warns user they cannot proceed if minutes field is empty
-    if (isNaN(minutesValue)) {
-        console.log("minutes is empty")
-        let warning = document.createElement('span');
-        warning.textContent = "minutes field cannot be empty";
-        warning.style.color = "red";
-        var caption = document.getElementById('caption');
-
-        while (caption.firstChild) {
-            caption.removeChild(caption.firstChild);
-        }
-
-        caption.appendChild(warning);
+    if (!checkMinutesFieldFilled(minutesValue)) {
         return false;
     }
-
-    //Warns user they cannot proceed if hours field is empty
-    if (isNaN(hoursValue)) {
-        console.log("hours is empty")
-        let warning = document.createElement('span');
-        warning.textContent = "hours field cannot be empty";
-        warning.style.color = "red";
-        var caption = document.getElementById('caption');
-
-        while (caption.firstChild) {
-            caption.removeChild(caption.firstChild);
-        }
-
-        caption.appendChild(warning);
+    if (!checkHoursFieldFilled(hoursValue)) {
         return false;
     }
 
     timer();
     // If a countdown end time is stored, use it instead of
 }
-function timer() {
 
+// This function checks if the user has entered a value in both the hours and minutes fields
+function checkBothFieldsFilled(hoursValue, minutesValue) {
+    if (isNaN(hoursValue) && isNaN(minutesValue)) {
+        console.log("hours and minutes are empty");
+        let warning = createWarningElement("both time fields cannot be empty");
+        replaceCaptionContent(warning);
+        return false;
+    }
+    return true;
+}
+
+// This function checks if the user has entered a value in the minutes field
+function checkMinutesFieldFilled(minutesValue) {
+    if (isNaN(minutesValue)) {
+        console.log("minutes is empty");
+        let warning = createWarningElement("minutes field cannot be empty");
+        replaceCaptionContent(warning);
+        return false;
+    }
+    return true;
+}
+
+// This function checks if the user has entered a value in the hours field
+function checkHoursFieldFilled(hoursValue) {
+    if (isNaN(hoursValue)) {
+        console.log("hours is empty");
+        let warning = createWarningElement("hours field cannot be empty");
+        replaceCaptionContent(warning);
+        return false;
+    }
+    return true;
+}
+
+// This function creates a warning element
+function createWarningElement(text) {
+    let warning = document.createElement('span');
+    warning.textContent = text;
+    warning.style.color = "red";
+    return warning;
+}
+
+// This function replaces the content of the caption element
+function replaceCaptionContent(element) {
+    var caption = document.getElementById('caption');
+    while (caption.firstChild) {
+        caption.removeChild(caption.firstChild);
+    }
+    caption.appendChild(element);
+}
+
+function timer() {
     console.log("hello world");
     // Get the current dog ID
     var currentDogId = localStorage.getItem("currentDogId");
@@ -209,4 +223,3 @@ function cancelTimer() {
     localStorage.removeItem(countdownEndTimeKey);
     localStorage.removeItem(timerIdKey);
 }
-
